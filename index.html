@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8938931278494081"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
@@ -37,6 +35,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
     <style>
       :root {
         --primary-color: #2563eb;
@@ -55,513 +56,491 @@
         box-sizing: border-box;
       }
 
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        background: var(--background-gradient);
-        min-height: 100vh;
+      html, body {
         overflow-x: hidden;
+        width: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: clamp(1rem, 4vw, 2rem);
+      .bg-gray-50 {
+        background-color: #f9fafb;
       }
 
-      /* Hero Section */
-      .hero {
-        text-align: center;
+      .hero-section {
+        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
         color: white;
-        margin-bottom: 3rem;
-        padding: 2rem 0;
+        padding: 3rem 1rem;
+        text-align: center;
       }
 
-      .hero h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      .hero-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: bold;
+        margin-bottom: 1rem;
       }
 
-      .hero h2 {
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
-        font-weight: 400;
-        margin-bottom: 0.5rem;
-        opacity: 0.95;
+      .hero-subtitle {
+        font-size: clamp(1.1rem, 3vw, 1.25rem);
+        color: #bfdbfe;
+        margin-bottom: 1rem;
+        font-weight: 600;
       }
 
-      .hero p {
-        font-size: clamp(1rem, 3vw, 1.1rem);
-        opacity: 0.9;
+      .hero-description {
+        font-size: clamp(1rem, 2.5vw, 1.125rem);
+        color: #dbeafe;
+        margin-bottom: 2rem;
         max-width: 600px;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      /* AdSense Ad Placeholder */
-      .ad-placeholder {
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px dashed rgba(255, 255, 255, 0.3);
-        border-radius: 8px;
-        padding: 1rem;
-        text-align: center;
-        color: white;
-        font-size: 0.9rem;
-        margin: 1rem 0;
-        opacity: 0.8;
+      .hero-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.875rem;
+        margin-bottom: 2rem;
       }
 
-      /* Header Ad */
-      .header-ad {
-        max-width: 728px;
-        height: 90px;
-        margin: 2rem auto;
+      .hero-feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
       }
 
-      /* Search Box */
-      .search-section {
-        max-width: 500px;
-        margin: 2rem auto;
-        position: relative;
+      .search-container {
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        padding: 0 1rem;
       }
 
       .search-input {
         width: 100%;
-        padding: 1rem 1.5rem;
-        font-size: 1.1rem;
-        border: none;
-        border-radius: 50px;
-        box-shadow: var(--card-shadow);
-        outline: none;
-        transition: var(--transition);
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.75rem;
+        background: white;
+        transition: border-color 0.2s;
       }
 
       .search-input:focus {
-        box-shadow: var(--card-shadow-hover);
-        transform: translateY(-2px);
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
       }
 
-      /* Top Ad */
-      .top-ad {
-        max-width: 336px;
-        height: 280px;
+      .ad-container {
+        display: flex;
+        justify-content: center;
         margin: 2rem auto;
+        padding: 0 1rem;
       }
 
-      /* States Grid */
+      .ad-placeholder {
+        background: #f3f4f6;
+        border: 2px dashed #d1d5db;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 1rem;
+      }
+
       .states-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 1.5rem;
-        margin: 2rem 0;
+        padding: 2rem 1rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 640px) {
+        .states-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          padding: 1rem;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 1024px) {
+        .states-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
 
       .state-card {
         background: white;
         border-radius: var(--border-radius);
-        padding: 1.5rem;
         box-shadow: var(--card-shadow);
+        overflow: hidden;
         transition: var(--transition);
         cursor: pointer;
         text-decoration: none;
         color: inherit;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
+        border: 2px solid transparent;
       }
 
       .state-card:hover {
-        transform: translateY(-5px) scale(1.02);
+        transform: translateY(-4px) scale(1.02);
         box-shadow: var(--card-shadow-hover);
-        border: 2px solid var(--primary-color);
+        border-color: var(--primary-color);
       }
 
-      .state-flag {
-        width: 80px;
-        height: 60px;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      .flag-container {
+        width: 100%;
+        height: 120px;
+        position: relative;
+        overflow: hidden;
+        background: #f8fafc;
+      }
+
+      .flag-image {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        border: 2px solid #f1f5f9;
-      }
-
-      .state-name {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: var(--primary-color);
-      }
-
-      .state-department {
-        color: var(--secondary-color);
-        font-size: 0.9rem;
-        line-height: 1.4;
-      }
-
-      /* Mid Content Ad */
-      .mid-ad {
-        max-width: 728px;
-        height: 90px;
-        margin: 3rem auto;
-      }
-
-      /* Bottom Ad */
-      .bottom-ad {
-        max-width: 336px;
-        height: 280px;
-        margin: 2rem auto;
-      }
-
-      /* Sidebar Ad (Desktop) */
-      .sidebar-ad {
-        position: fixed;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 160px;
-        height: 600px;
-        z-index: 100;
-      }
-
-      /* Footer */
-      .footer {
-        text-align: center;
-        color: white;
-        margin-top: 4rem;
-        padding: 3rem 1rem;
-        background: rgba(0, 0, 0, 0.1);
-        border-radius: var(--border-radius);
-      }
-
-      .footer p {
-        margin-bottom: 0.5rem;
-        opacity: 0.9;
-      }
-
-      .footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 0.5rem;
         transition: var(--transition);
       }
 
-      .footer a:hover {
-        text-decoration: underline;
-        opacity: 0.8;
+      .state-card:hover .flag-image {
+        transform: scale(1.05);
       }
 
-      /* Responsive Design */
-      @media (max-width: 1200px) {
+      .state-info {
+        padding: 1rem;
+      }
+
+      .state-name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.25rem;
+      }
+
+      .state-abbr {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 0.5rem;
+      }
+
+      .state-dept {
+        font-size: 0.75rem;
+        color: #9ca3af;
+        line-height: 1.4;
+      }
+
+      .sidebar-ad {
+        position: fixed;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      @media (max-width: 1400px) {
         .sidebar-ad {
           display: none;
         }
       }
 
-      @media (max-width: 768px) {
-        .states-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
-        }
-
-        .state-card {
-          padding: 1rem;
-        }
-
-        .state-flag {
-          width: 60px;
-          height: 45px;
-        }
-
-        .state-name {
-          font-size: 1.1rem;
-        }
-
-        .state-department {
-          font-size: 0.8rem;
-        }
-
-        .header-ad,
-        .mid-ad {
-          max-width: 320px;
-          height: 50px;
-        }
-
-        .top-ad,
-        .bottom-ad {
-          max-width: 300px;
-          height: 250px;
-        }
+      .footer {
+        background: #1f2937;
+        color: white;
+        padding: 3rem 1rem 2rem;
+        margin-top: 4rem;
+        text-align: center;
       }
 
-      @media (max-width: 480px) {
-        .states-grid {
-          grid-template-columns: 1fr;
-        }
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
       }
 
-      /* Loading Animation */
-      .loading {
-        opacity: 0.5;
-        pointer-events: none;
+      .footer-disclaimer {
+        background: #374151;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
       }
 
-      /* Accessibility */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
       }
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+      .footer-link {
+        color: #9ca3af;
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s;
+      }
+
+      .footer-link:hover {
+        color: white;
+      }
+
+      .footer-copyright {
+        color: #6b7280;
+        font-size: 0.75rem;
+        border-top: 1px solid #374151;
+        padding-top: 1rem;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .no-results {
+        text-align: center;
+        padding: 3rem 1rem;
+        color: #6b7280;
+      }
+
+      .no-results h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: #374151;
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <!-- Hero Section -->
-      <header class="hero">
-        <h1>DMV Hour Tracker</h1>
-        <h2>Find your official state DMV website</h2>
-        <p>Click your state below to visit the official government site</p>
-      </header>
-
-      <!-- Header Leaderboard Ad -->
-      <div class="header-ad ad-placeholder">
-        Header Leaderboard Ad (728x90px)<br>
-        <small>Premium above-the-fold placement</small>
+  <body class="bg-gray-50">
+    <!-- Sidebar Ad - Desktop Only -->
+    <div class="sidebar-ad">
+      <div class="ad-placeholder" style="width: 160px; height: 600px;">
+        Sidebar Ad<br>160x600
       </div>
+    </div>
 
-      <!-- Search Section -->
-      <section class="search-section">
-        <label for="searchInput" class="sr-only">Search states by name or abbreviation</label>
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">DMV Hour Tracker</h1>
+        <h2 class="hero-subtitle">Find your official state DMV website</h2>
+        <p class="hero-description">
+          Click your state below to visit the official government site.
+        </p>
+        <div class="hero-features">
+          <div class="hero-feature">
+            <svg class="lucide lucide-shield" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Official Government Links</span>
+          </div>
+          <div class="hero-feature">
+            <svg class="lucide lucide-clock" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <span>Updated Weekly</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Header Leaderboard Ad -->
+      <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 0;">
+        <div class="ad-container">
+          <div class="ad-placeholder" style="width: 728px; height: 90px; max-width: 100%;">
+            Header Ad<br>728x90
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Search Bar -->
+      <div class="search-container" style="margin-top: 2rem;">
         <input 
           type="text" 
           id="searchInput" 
-          class="search-input"
+          class="search-input" 
           placeholder="Search by state name or abbreviation..."
           autocomplete="off"
-          aria-label="Search states"
-        />
-      </section>
-
+        >
+      </div>
+      
       <!-- Top Rectangle Ad -->
-      <div class="top-ad ad-placeholder">
-        Top Rectangle Ad (336x280px)<br>
-        <small>High-engagement area</small>
+      <div class="ad-container">
+        <div class="ad-placeholder" style="width: 336px; height: 280px;">
+          Top Rectangle Ad<br>336x280
+        </div>
       </div>
 
       <!-- States Grid -->
-      <main>
-        <div class="states-grid" id="statesGrid" role="main" aria-label="State DMV directory">
-          <!-- States will be populated by JavaScript -->
-        </div>
-      </main>
+      <div class="states-grid" id="statesGrid">
+        <!-- States will be populated by JavaScript -->
+      </div>
 
-      <!-- Mid-Content Banner Ad -->
-      <div class="mid-ad ad-placeholder">
-        Mid-Content Banner Ad (728x90px)<br>
-        <small>Content break placement</small>
+      <!-- Mid Content Banner Ad -->
+      <div class="ad-container">
+        <div class="ad-placeholder" style="width: 728px; height: 90px; max-width: 100%;">
+          Mid Content Ad<br>728x90
+        </div>
       </div>
 
       <!-- Bottom Rectangle Ad -->
-      <div class="bottom-ad ad-placeholder">
-        Bottom Rectangle Ad (336x280px)<br>
-        <small>Post-browse engagement</small>
+      <div class="ad-container">
+        <div class="ad-placeholder" style="width: 336px; height: 280px;">
+          Bottom Rectangle Ad<br>336x280
+        </div>
       </div>
 
-      <!-- Desktop Sidebar Ad -->
-      <div class="sidebar-ad ad-placeholder">
-        Sidebar Skyscraper<br>
-        (160x600px)<br>
-        <small>Desktop persistent</small>
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results hidden">
+        <h3>No states found</h3>
+        <p>Try adjusting your search terms.</p>
       </div>
+    </main>
 
-      <!-- Footer -->
-      <footer class="footer">
-        <p><strong>© 2025 DMV Hour Tracker</strong> | Not affiliated with any U.S. government agency</p>
-        <p>All links lead to official government websites</p>
-        <nav aria-label="Footer navigation">
-          <a href="#about">About Us</a>
-          <a href="#contact">Contact</a>
-          <a href="#privacy">Privacy Policy</a>
-          <a href="#terms">Terms of Service</a>
-        </nav>
-      </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-disclaimer">
+          <strong>Important Disclaimer:</strong> DMV Hour Tracker is an independent directory service providing direct links to official state motor vehicle department websites. We are not affiliated with, endorsed by, or connected to any government agency. All DMV services, transactions, and official business must be conducted through the official state websites linked from this directory.
+        </div>
+        
+        <div class="footer-links">
+          <a href="/about" class="footer-link">About Us</a>
+          <a href="/contact" class="footer-link">Contact</a>
+          <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
+          <a href="/terms" class="footer-link">Terms of Service</a>
+        </div>
+        
+        <div class="footer-copyright">
+          © 2025 DMV Hour Tracker | Not affiliated with any government agency
+        </div>
+      </div>
+    </footer>
 
     <script>
-      // State data with flag URLs
+      // State data
       const states = [
-        { name: "Alabama", abbreviation: "AL", url: "https://revenue.alabama.gov/motor-vehicle/", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Alabama.svg" },
-        { name: "Alaska", abbreviation: "AK", url: "http://doa.alaska.gov/dmv/akol/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Flag_of_Alaska.svg" },
-        { name: "Arizona", abbreviation: "AZ", url: "https://azdot.gov/motor-vehicle-services", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arizona.svg" },
-        { name: "Arkansas", abbreviation: "AR", url: "https://www.dfa.arkansas.gov/motor-vehicle/", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg" },
-        { name: "California", abbreviation: "CA", url: "https://www.dmv.ca.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" },
-        { name: "Colorado", abbreviation: "CO", url: "https://dmv.colorado.gov/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/46/Flag_of_Colorado.svg" },
-        { name: "Connecticut", abbreviation: "CT", url: "https://portal.ct.gov/DMV", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/9/96/Flag_of_Connecticut.svg" },
-        { name: "Delaware", abbreviation: "DE", url: "https://www.dmv.de.gov/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c6/Flag_of_Delaware.svg" },
-        { name: "Florida", abbreviation: "FL", url: "https://www.flhsmv.gov/", department: "Highway Safety and Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg" },
-        { name: "Georgia", abbreviation: "GA", url: "https://dds.georgia.gov/", department: "Department of Driver Services", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_Georgia_%28U.S._state%29.svg" },
-        { name: "Hawaii", abbreviation: "HI", url: "http://www.honolulu.gov/dmv", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Flag_of_Hawaii.svg" },
-        { name: "Idaho", abbreviation: "ID", url: "https://itd.idaho.gov/dmv/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_Idaho.svg" },
-        { name: "Illinois", abbreviation: "IL", url: "https://www.ilsos.gov/departments/vehicles/", department: "Secretary of State", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Illinois.svg" },
-        { name: "Indiana", abbreviation: "IN", url: "https://www.in.gov/bmv/", department: "Bureau of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Flag_of_Indiana.svg" },
-        { name: "Iowa", abbreviation: "IA", url: "https://iowadot.gov/mvd", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Flag_of_Iowa.svg" },
-        { name: "Kansas", abbreviation: "KS", url: "https://www.ksrevenue.gov/dmv.html", department: "Division of Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/d/da/Flag_of_Kansas.svg" },
-        { name: "Kentucky", abbreviation: "KY", url: "https://drive.ky.gov/", department: "Transportation Cabinet", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Flag_of_Kentucky.svg" },
-        { name: "Louisiana", abbreviation: "LA", url: "https://omv.dps.la.gov/", department: "Office of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Flag_of_Louisiana.svg" },
-        { name: "Maine", abbreviation: "ME", url: "https://www.maine.gov/sos/bmv/", department: "Bureau of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Maine.svg" },
-        { name: "Maryland", abbreviation: "MD", url: "https://mva.maryland.gov/", department: "Motor Vehicle Administration", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Maryland.svg" },
-        { name: "Massachusetts", abbreviation: "MA", url: "https://www.mass.gov/rmv", department: "Registry of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Massachusetts.svg" },
-        { name: "Michigan", abbreviation: "MI", url: "https://www.michigan.gov/sos", department: "Secretary of State", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Flag_of_Michigan.svg" },
-        { name: "Minnesota", abbreviation: "MN", url: "https://dps.mn.gov/divisions/dvs/", department: "Driver and Vehicle Services", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Minnesota.svg" },
-        { name: "Mississippi", abbreviation: "MS", url: "https://www.dps.ms.gov/driver-services/", department: "Department of Public Safety", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_Mississippi.svg" },
-        { name: "Missouri", abbreviation: "MO", url: "https://dor.mo.gov/motor-vehicle/", department: "Department of Revenue", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Flag_of_Missouri.svg" },
-        { name: "Montana", abbreviation: "MT", url: "https://dojmt.gov/driving/", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_Montana.svg" },
-        { name: "Nebraska", abbreviation: "NE", url: "https://dmv.nebraska.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Flag_of_Nebraska.svg" },
-        { name: "Nevada", abbreviation: "NV", url: "https://dmv.nv.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Flag_of_Nevada.svg" },
-        { name: "New Hampshire", abbreviation: "NH", url: "https://www.nh.gov/safety/divisions/dmv/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_New_Hampshire.svg" },
-        { name: "New Jersey", abbreviation: "NJ", url: "https://www.state.nj.us/mvc/", department: "Motor Vehicle Commission", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_New_Jersey.svg" },
-        { name: "New Mexico", abbreviation: "NM", url: "https://www.mvd.newmexico.gov/", department: "Motor Vehicle Division", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_New_Mexico.svg" },
-        { name: "New York", abbreviation: "NY", url: "https://dmv.ny.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_New_York.svg" },
-        { name: "North Carolina", abbreviation: "NC", url: "https://www.ncdot.gov/dmv/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Flag_of_North_Carolina.svg" },
-        { name: "North Dakota", abbreviation: "ND", url: "https://www.dot.nd.gov/divisions/driverslicense/", department: "Department of Transportation", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/e/ee/Flag_of_North_Dakota.svg" },
-        { name: "Ohio", abbreviation: "OH", url: "https://bmv.ohio.gov/", department: "Bureau of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Ohio.svg" },
-        { name: "Oklahoma", abbreviation: "OK", url: "https://www.ok.gov/dps/", department: "Department of Public Safety", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Flag_of_Oklahoma.svg" },
-        { name: "Oregon", abbreviation: "OR", url: "https://www.oregon.gov/odot/dmv/", department: "Driver and Motor Vehicle Services", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flag_of_Oregon.svg" },
-        { name: "Pennsylvania", abbreviation: "PA", url: "https://www.dmv.pa.gov/", department: "Department of Transportation", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Pennsylvania.svg" },
-        { name: "Rhode Island", abbreviation: "RI", url: "https://www.dmv.ri.gov/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Rhode_Island.svg" },
-        { name: "South Carolina", abbreviation: "SC", url: "https://www.scdmvonline.com/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/6/69/Flag_of_South_Carolina.svg" },
-        { name: "South Dakota", abbreviation: "SD", url: "https://dps.sd.gov/driver-licensing", department: "Department of Public Safety", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_South_Dakota.svg" },
-        { name: "Tennessee", abbreviation: "TN", url: "https://www.tn.gov/safety/driver-services.html", department: "Department of Safety", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Tennessee.svg" },
-        { name: "Texas", abbreviation: "TX", url: "https://www.dps.texas.gov/section/driver-license", department: "Department of Public Safety", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg" },
-        { name: "Utah", abbreviation: "UT", url: "https://dmv.utah.gov/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Flag_of_Utah.svg" },
-        { name: "Vermont", abbreviation: "VT", url: "https://dmv.vermont.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Vermont.svg" },
-        { name: "Virginia", abbreviation: "VA", url: "https://www.dmv.virginia.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Virginia.svg" },
-        { name: "Washington", abbreviation: "WA", url: "https://www.dol.wa.gov/", department: "Department of Licensing", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/5/54/Flag_of_Washington.svg" },
-        { name: "Washington DC", abbreviation: "DC", url: "https://dmv.dc.gov/", department: "Department of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_the_District_of_Columbia.svg" },
-        { name: "West Virginia", abbreviation: "WV", url: "https://www.wvdmv.gov/", department: "Division of Motor Vehicles", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_West_Virginia.svg" },
-        { name: "Wisconsin", abbreviation: "WI", url: "https://wisconsindmv.gov/", department: "Department of Transportation", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/2/22/Flag_of_Wisconsin.svg" },
-        { name: "Wyoming", abbreviation: "WY", url: "https://dot.state.wy.us/home/driver_services.html", department: "Department of Transportation", flagUrl: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Wyoming.svg" }
+        { id: "alabama", name: "Alabama", abbreviation: "AL", dmvUrl: "https://revenue.alabama.gov/motor-vehicle/", departmentName: "Motor Vehicle Division" },
+        { id: "alaska", name: "Alaska", abbreviation: "AK", dmvUrl: "http://doa.alaska.gov/dmv/akol/", departmentName: "Division of Motor Vehicles" },
+        { id: "arizona", name: "Arizona", abbreviation: "AZ", dmvUrl: "https://azdot.gov/motor-vehicle-services", departmentName: "Motor Vehicle Division" },
+        { id: "arkansas", name: "Arkansas", abbreviation: "AR", dmvUrl: "https://mydmv.arkansas.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "california", name: "California", abbreviation: "CA", dmvUrl: "https://www.dmv.ca.gov/portal/dmv", departmentName: "Department of Motor Vehicles" },
+        { id: "colorado", name: "Colorado", abbreviation: "CO", dmvUrl: "https://dmv.colorado.gov/", departmentName: "Division of Motor Vehicles" },
+        { id: "connecticut", name: "Connecticut", abbreviation: "CT", dmvUrl: "https://portal.ct.gov/DMV", departmentName: "Department of Motor Vehicles" },
+        { id: "delaware", name: "Delaware", abbreviation: "DE", dmvUrl: "https://www.dmv.de.gov/", departmentName: "Division of Motor Vehicles" },
+        { id: "florida", name: "Florida", abbreviation: "FL", dmvUrl: "https://www.flhsmv.gov/", departmentName: "Highway Safety and Motor Vehicles" },
+        { id: "georgia", name: "Georgia", abbreviation: "GA", dmvUrl: "https://www.dds.ga.gov/", departmentName: "Department of Driver Services" },
+        { id: "hawaii", name: "Hawaii", abbreviation: "HI", dmvUrl: "https://www.hawaiicounty.gov/departments/finance/vehicle-registration-licensing", departmentName: "County Vehicle Registration" },
+        { id: "idaho", name: "Idaho", abbreviation: "ID", dmvUrl: "https://itd.idaho.gov/dmv/", departmentName: "Division of Motor Vehicles" },
+        { id: "illinois", name: "Illinois", abbreviation: "IL", dmvUrl: "https://www.ilsos.gov/", departmentName: "Secretary of State" },
+        { id: "indiana", name: "Indiana", abbreviation: "IN", dmvUrl: "https://www.in.gov/bmv/", departmentName: "Bureau of Motor Vehicles" },
+        { id: "iowa", name: "Iowa", abbreviation: "IA", dmvUrl: "https://iowadot.gov/mvd", departmentName: "Motor Vehicle Division" },
+        { id: "kansas", name: "Kansas", abbreviation: "KS", dmvUrl: "https://www.ksrevenue.gov/vehicle.html", departmentName: "Division of Vehicles" },
+        { id: "kentucky", name: "Kentucky", abbreviation: "KY", dmvUrl: "https://drive.ky.gov/", departmentName: "Kentucky Transportation Cabinet" },
+        { id: "louisiana", name: "Louisiana", abbreviation: "LA", dmvUrl: "https://www.expresslane.org/", departmentName: "Office of Motor Vehicles" },
+        { id: "maine", name: "Maine", abbreviation: "ME", dmvUrl: "https://www.maine.gov/sos/bmv/", departmentName: "Bureau of Motor Vehicles" },
+        { id: "maryland", name: "Maryland", abbreviation: "MD", dmvUrl: "https://mva.maryland.gov/", departmentName: "Motor Vehicle Administration" },
+        { id: "massachusetts", name: "Massachusetts", abbreviation: "MA", dmvUrl: "https://www.mass.gov/orgs/registry-of-motor-vehicles", departmentName: "Registry of Motor Vehicles" },
+        { id: "michigan", name: "Michigan", abbreviation: "MI", dmvUrl: "https://www.michigan.gov/sos", departmentName: "Secretary of State" },
+        { id: "minnesota", name: "Minnesota", abbreviation: "MN", dmvUrl: "https://dps.mn.gov/divisions/dvs/Pages/default.aspx", departmentName: "Driver and Vehicle Services" },
+        { id: "mississippi", name: "Mississippi", abbreviation: "MS", dmvUrl: "https://www.dps.ms.gov/", departmentName: "Department of Public Safety" },
+        { id: "missouri", name: "Missouri", abbreviation: "MO", dmvUrl: "https://dor.mo.gov/motor-vehicle/", departmentName: "Department of Revenue" },
+        { id: "montana", name: "Montana", abbreviation: "MT", dmvUrl: "https://mvd.doj.mt.gov/", departmentName: "Motor Vehicle Division" },
+        { id: "nebraska", name: "Nebraska", abbreviation: "NE", dmvUrl: "https://dmv.nebraska.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "nevada", name: "Nevada", abbreviation: "NV", dmvUrl: "https://dmvnv.com/", departmentName: "Department of Motor Vehicles" },
+        { id: "new-hampshire", name: "New Hampshire", abbreviation: "NH", dmvUrl: "https://www.nh.gov/safety/divisions/dmv/", departmentName: "Division of Motor Vehicles" },
+        { id: "new-jersey", name: "New Jersey", abbreviation: "NJ", dmvUrl: "https://www.state.nj.us/mvc/", departmentName: "Motor Vehicle Commission" },
+        { id: "new-mexico", name: "New Mexico", abbreviation: "NM", dmvUrl: "https://www.mvd.newmexico.gov/", departmentName: "Motor Vehicle Division" },
+        { id: "new-york", name: "New York", abbreviation: "NY", dmvUrl: "https://dmv.ny.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "north-carolina", name: "North Carolina", abbreviation: "NC", dmvUrl: "https://www.ncdot.gov/dmv/", departmentName: "Division of Motor Vehicles" },
+        { id: "north-dakota", name: "North Dakota", abbreviation: "ND", dmvUrl: "https://www.dot.nd.gov/divisions/driverslicense/", departmentName: "Driver License Division" },
+        { id: "ohio", name: "Ohio", abbreviation: "OH", dmvUrl: "https://www.bmv.ohio.gov/", departmentName: "Bureau of Motor Vehicles" },
+        { id: "oklahoma", name: "Oklahoma", abbreviation: "OK", dmvUrl: "https://www.ok.gov/dps/", departmentName: "Department of Public Safety" },
+        { id: "oregon", name: "Oregon", abbreviation: "OR", dmvUrl: "https://www.oregon.gov/odot/dmv/pages/index.aspx", departmentName: "Driver and Motor Vehicle Services" },
+        { id: "pennsylvania", name: "Pennsylvania", abbreviation: "PA", dmvUrl: "https://www.dmv.pa.gov/", departmentName: "Department of Transportation" },
+        { id: "rhode-island", name: "Rhode Island", abbreviation: "RI", dmvUrl: "https://www.dmv.ri.gov/", departmentName: "Division of Motor Vehicles" },
+        { id: "south-carolina", name: "South Carolina", abbreviation: "SC", dmvUrl: "https://www.scdmvonline.com/", departmentName: "Department of Motor Vehicles" },
+        { id: "south-dakota", name: "South Dakota", abbreviation: "SD", dmvUrl: "https://dps.sd.gov/driver-licensing", departmentName: "Driver Licensing Program" },
+        { id: "tennessee", name: "Tennessee", abbreviation: "TN", dmvUrl: "https://www.tn.gov/safety/driver-services.html", departmentName: "Department of Safety" },
+        { id: "texas", name: "Texas", abbreviation: "TX", dmvUrl: "https://www.txdmv.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "utah", name: "Utah", abbreviation: "UT", dmvUrl: "https://dmv.utah.gov/", departmentName: "Division of Motor Vehicles" },
+        { id: "vermont", name: "Vermont", abbreviation: "VT", dmvUrl: "https://dmv.vermont.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "virginia", name: "Virginia", abbreviation: "VA", dmvUrl: "https://www.dmv.virginia.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "washington", name: "Washington", abbreviation: "WA", dmvUrl: "https://www.dol.wa.gov/", departmentName: "Department of Licensing" },
+        { id: "washington-dc", name: "Washington DC", abbreviation: "DC", dmvUrl: "https://dmv.dc.gov/", departmentName: "Department of Motor Vehicles" },
+        { id: "west-virginia", name: "West Virginia", abbreviation: "WV", dmvUrl: "https://www.wvdmv.gov/", departmentName: "Division of Motor Vehicles" },
+        { id: "wisconsin", name: "Wisconsin", abbreviation: "WI", dmvUrl: "https://wisconsindmv.gov/", departmentName: "Department of Transportation" },
+        { id: "wyoming", name: "Wyoming", abbreviation: "WY", dmvUrl: "https://dot.state.wy.us/home/driver_license_records.html", departmentName: "Driver Services Program" }
       ];
 
       // Sort states alphabetically
       states.sort((a, b) => a.name.localeCompare(b.name));
 
-      function renderStates(statesToRender = states) {
+      let currentStates = [...states];
+
+      // Render states
+      function renderStates(statesToRender) {
         const grid = document.getElementById('statesGrid');
+        const noResults = document.getElementById('noResults');
         
         if (statesToRender.length === 0) {
-          grid.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; color: white; padding: 2rem;">No states found matching your search.</div>';
+          grid.innerHTML = '';
+          noResults.classList.remove('hidden');
           return;
         }
-
+        
+        noResults.classList.add('hidden');
+        
         grid.innerHTML = statesToRender.map(state => `
-          <a href="${state.url}" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="state-card"
-             aria-label="Visit ${state.name} DMV website">
-            <img src="${state.flagUrl}" 
-                 alt="${state.name} state flag" 
-                 class="state-flag"
-                 loading="lazy"
-                 onerror="this.style.display='none';">
-            <h3 class="state-name">${state.name} (${state.abbreviation})</h3>
-            <p class="state-department">${state.department}</p>
+          <a href="${state.dmvUrl}" target="_blank" rel="noopener noreferrer" class="state-card">
+            <div class="flag-container">
+              <img 
+                src="/flags/${state.id}.svg" 
+                alt="${state.name} flag" 
+                class="flag-image"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
+              <div style="display: none; width: 100%; height: 100%; background: #f1f5f9; align-items: center; justify-content: center; font-weight: 600; color: #64748b;">
+                ${state.abbreviation}
+              </div>
+            </div>
+            <div class="state-info">
+              <div class="state-name">${state.name}</div>
+              <div class="state-abbr">${state.abbreviation}</div>
+              <div class="state-dept">${state.departmentName}</div>
+            </div>
           </a>
         `).join('');
       }
 
-      function filterStates() {
-        const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-        
-        if (!searchTerm) {
-          renderStates();
-          return;
+      // Search functionality
+      function filterStates(query) {
+        if (!query.trim()) {
+          currentStates = [...states];
+        } else {
+          currentStates = states.filter(state => 
+            state.name.toLowerCase().includes(query.toLowerCase()) ||
+            state.abbreviation.toLowerCase().includes(query.toLowerCase())
+          );
         }
-
-        const filtered = states.filter(state => 
-          state.name.toLowerCase().includes(searchTerm) || 
-          state.abbreviation.toLowerCase().includes(searchTerm) ||
-          state.department.toLowerCase().includes(searchTerm)
-        );
-        
-        renderStates(filtered);
+        renderStates(currentStates);
       }
 
-      // Event listeners
-      document.getElementById('searchInput').addEventListener('input', filterStates);
-      document.getElementById('searchInput').addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          this.value = '';
-          renderStates();
-        }
+      // Initialize search
+      const searchInput = document.getElementById('searchInput');
+      searchInput.addEventListener('input', (e) => {
+        filterStates(e.target.value);
       });
 
-      // Initialize page
-      document.addEventListener('DOMContentLoaded', function() {
-        renderStates();
-        
-        // Add performance monitoring
-        if ('performance' in window) {
-          window.addEventListener('load', function() {
-            setTimeout(function() {
-              const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-              console.log('Page load time:', loadTime + 'ms');
-            }, 0);
-          });
-        }
-      });
+      // Initial render
+      renderStates(states);
 
-      // Lazy loading for images
-      if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const img = entry.target;
-              img.src = img.dataset.src || img.src;
-              img.classList.remove('loading');
-              observer.unobserve(img);
-            }
-          });
-        });
-
-        // Apply lazy loading to state flags when they're rendered
-        const observeImages = () => {
-          document.querySelectorAll('.state-flag[loading="lazy"]').forEach(img => {
-            imageObserver.observe(img);
-          });
-        };
-
-        // Re-observe when content changes
-        const gridObserver = new MutationObserver(observeImages);
-        gridObserver.observe(document.getElementById('statesGrid'), { childList: true });
-      }
-
-      // Service Worker registration for PWA capabilities
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').catch(function(err) {
-            console.log('ServiceWorker registration failed: ', err);
-          });
-        });
+      // Initialize Lucide icons
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
       }
     </script>
   </body>
