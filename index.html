@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMV Hour Tracker – Official State DMV Links</title>
+    <meta name="description" content="Click your state to access the official DMV website. All 50 states. No ads, no distractions.">
+    <link rel="canonical" href="https://dmv-links.com">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: clamp(1rem, 4vw, 2rem); }
+        .hero { text-align: center; color: white; margin-bottom: 3rem; }
+        .hero h1 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
+        .hero h2 { font-size: clamp(1.2rem, 4vw, 1.5rem); font-weight: 400; margin-bottom: 0.5rem; }
+        .hero p { font-size: clamp(1rem, 3vw, 1.1rem); opacity: 0.9; }
+        .search-box { max-width: 500px; margin: 2rem auto; }
+        .search-box input { width: 100%; padding: 1rem; font-size: 1.1rem; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .states-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .state-card { background: white; border-radius: 15px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer; text-decoration: none; color: inherit; }
+        .state-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); border: 2px solid #2563eb; }
+        .state-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: #2563eb; }
+        .state-card p { color: #666; font-size: 0.9rem; }
+        .footer { text-align: center; color: white; margin-top: 3rem; padding: 2rem; }
+        .footer p { margin-bottom: 0.5rem; opacity: 0.9; }
+        .footer a { color: white; text-decoration: underline; }
+        @media (max-width: 768px) {
+            .states-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .state-card { padding: 1rem; }
+            .state-card h3 { font-size: 1.1rem; }
+            .state-card p { font-size: 0.8rem; }
+        }
+        @media (max-width: 480px) {
+            .states-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>DMV Hour Tracker</h1>
+            <h2>Find your official state DMV website</h2>
+            <p>Click your state below to visit the official government site</p>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search by state name or abbreviation..." />
+        </div>
+        
+        <div class="states-grid" id="statesGrid">
+            <!-- States populated by JavaScript -->
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 DMV Hour Tracker | Not affiliated with any U.S. government agency</p>
+            <p>All links lead to official government websites | <a href="#about">About</a> | <a href="#contact">Contact</a> | <a href="#privacy">Privacy</a></p>
+        </div>
+    </div>
+
+    <script>
+        const states = [
+            { name: "Alabama", abbreviation: "AL", url: "https://revenue.alabama.gov/motor-vehicle/", department: "Motor Vehicle Division" },
+            { name: "Alaska", abbreviation: "AK", url: "http://doa.alaska.gov/dmv/akol/", department: "Division of Motor Vehicles" },
+            { name: "Arizona", abbreviation: "AZ", url: "https://azdot.gov/motor-vehicle-services", department: "Motor Vehicle Division" },
+            { name: "Arkansas", abbreviation: "AR", url: "https://www.dfa.arkansas.gov/motor-vehicle/", department: "Motor Vehicle Division" },
+            { name: "California", abbreviation: "CA", url: "https://www.dmv.ca.gov/", department: "Department of Motor Vehicles" },
+            { name: "Colorado", abbreviation: "CO", url: "https://dmv.colorado.gov/", department: "Division of Motor Vehicles" },
+            { name: "Connecticut", abbreviation: "CT", url: "https://portal.ct.gov/DMV", department: "Department of Motor Vehicles" },
+            { name: "Delaware", abbreviation: "DE", url: "https://www.dmv.de.gov/", department: "Division of Motor Vehicles" },
+            { name: "Florida", abbreviation: "FL", url: "https://www.flhsmv.gov/", department: "Highway Safety and Motor Vehicles" },
+            { name: "Georgia", abbreviation: "GA", url: "https://dds.georgia.gov/", department: "Department of Driver Services" },
+            { name: "Hawaii", abbreviation: "HI", url: "http://www.honolulu.gov/dmv", department: "Motor Vehicle Division" },
+            { name: "Idaho", abbreviation: "ID", url: "https://itd.idaho.gov/dmv/", department: "Division of Motor Vehicles" },
+            { name: "Illinois", abbreviation: "IL", url: "https://www.ilsos.gov/departments/vehicles/", department: "Secretary of State" },
+            { name: "Indiana", abbreviation: "IN", url: "https://www.in.gov/bmv/", department: "Bureau of Motor Vehicles" },
+            { name: "Iowa", abbreviation: "IA", url: "https://iowadot.gov/mvd", department: "Motor Vehicle Division" },
+            { name: "Kansas", abbreviation: "KS", url: "https://www.ksrevenue.gov/dmv.html", department: "Division of Vehicles" },
+            { name: "Kentucky", abbreviation: "KY", url: "https://drive.ky.gov/", department: "Transportation Cabinet" },
+            { name: "Louisiana", abbreviation: "LA", url: "https://omv.dps.la.gov/", department: "Office of Motor Vehicles" },
+            { name: "Maine", abbreviation: "ME", url: "https://www.maine.gov/sos/bmv/", department: "Bureau of Motor Vehicles" },
+            { name: "Maryland", abbreviation: "MD", url: "https://mva.maryland.gov/", department: "Motor Vehicle Administration" },
+            { name: "Massachusetts", abbreviation: "MA", url: "https://www.mass.gov/rmv", department: "Registry of Motor Vehicles" },
+            { name: "Michigan", abbreviation: "MI", url: "https://www.michigan.gov/sos", department: "Secretary of State" },
+            { name: "Minnesota", abbreviation: "MN", url: "https://dps.mn.gov/divisions/dvs/", department: "Driver and Vehicle Services" },
+            { name: "Mississippi", abbreviation: "MS", url: "https://www.dps.ms.gov/driver-services/", department: "Department of Public Safety" },
+            { name: "Missouri", abbreviation: "MO", url: "https://dor.mo.gov/motor-vehicle/", department: "Department of Revenue" },
+            { name: "Montana", abbreviation: "MT", url: "https://dojmt.gov/driving/", department: "Motor Vehicle Division" },
+            { name: "Nebraska", abbreviation: "NE", url: "https://dmv.nebraska.gov/", department: "Department of Motor Vehicles" },
+            { name: "Nevada", abbreviation: "NV", url: "https://dmv.nv.gov/", department: "Department of Motor Vehicles" },
+            { name: "New Hampshire", abbreviation: "NH", url: "https://www.nh.gov/safety/divisions/dmv/", department: "Division of Motor Vehicles" },
+            { name: "New Jersey", abbreviation: "NJ", url: "https://www.state.nj.us/mvc/", department: "Motor Vehicle Commission" },
+            { name: "New Mexico", abbreviation: "NM", url: "https://www.mvd.newmexico.gov/", department: "Motor Vehicle Division" },
+            { name: "New York", abbreviation: "NY", url: "https://dmv.ny.gov/", department: "Department of Motor Vehicles" },
+            { name: "North Carolina", abbreviation: "NC", url: "https://www.ncdot.gov/dmv/", department: "Division of Motor Vehicles" },
+            { name: "North Dakota", abbreviation: "ND", url: "https://www.dot.nd.gov/divisions/driverslicense/", department: "Department of Transportation" },
+            { name: "Ohio", abbreviation: "OH", url: "https://bmv.ohio.gov/", department: "Bureau of Motor Vehicles" },
+            { name: "Oklahoma", abbreviation: "OK", url: "https://www.ok.gov/dps/", department: "Department of Public Safety" },
+            { name: "Oregon", abbreviation: "OR", url: "https://www.oregon.gov/odot/dmv/", department: "Driver and Motor Vehicle Services" },
+            { name: "Pennsylvania", abbreviation: "PA", url: "https://www.dmv.pa.gov/", department: "Department of Transportation" },
+            { name: "Rhode Island", abbreviation: "RI", url: "https://www.dmv.ri.gov/", department: "Division of Motor Vehicles" },
+            { name: "South Carolina", abbreviation: "SC", url: "https://www.scdmvonline.com/", department: "Department of Motor Vehicles" },
+            { name: "South Dakota", abbreviation: "SD", url: "https://dps.sd.gov/driver-licensing", department: "Department of Public Safety" },
+            { name: "Tennessee", abbreviation: "TN", url: "https://www.tn.gov/safety/driver-services.html", department: "Department of Safety" },
+            { name: "Texas", abbreviation: "TX", url: "https://www.dps.texas.gov/section/driver-license", department: "Department of Public Safety" },
+            { name: "Utah", abbreviation: "UT", url: "https://dmv.utah.gov/", department: "Division of Motor Vehicles" },
+            { name: "Vermont", abbreviation: "VT", url: "https://dmv.vermont.gov/", department: "Department of Motor Vehicles" },
+            { name: "Virginia", abbreviation: "VA", url: "https://www.dmv.virginia.gov/", department: "Department of Motor Vehicles" },
+            { name: "Washington", abbreviation: "WA", url: "https://www.dol.wa.gov/", department: "Department of Licensing" },
+            { name: "Washington DC", abbreviation: "DC", url: "https://dmv.dc.gov/", department: "Department of Motor Vehicles" },
+            { name: "West Virginia", abbreviation: "WV", url: "https://www.wvdmv.gov/", department: "Division of Motor Vehicles" },
+            { name: "Wisconsin", abbreviation: "WI", url: "https://wisconsindmv.gov/", department: "Department of Transportation" },
+            { name: "Wyoming", abbreviation: "WY", url: "https://dot.state.wy.us/home/driver_services.html", department: "Department of Transportation" }
+        ];
+
+        function renderStates(statesToRender = states) {
+            const grid = document.getElementById('statesGrid');
+            grid.innerHTML = statesToRender.map(state => `
+                <a href="${state.url}" target="_blank" rel="noopener" class="state-card">
+                    <h3>${state.name} (${state.abbreviation})</h3>
+                    <p>${state.department}</p>
+                </a>
+            `).join('');
+        }
+
+        function filterStates() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = states.filter(state => 
+                state.name.toLowerCase().includes(searchTerm) || 
+                state.abbreviation.toLowerCase().includes(searchTerm)
+            );
+            renderStates(filtered);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', filterStates);
+        renderStates();
+    </script>
+</body>
+</html>
