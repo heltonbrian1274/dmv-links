@@ -288,14 +288,7 @@
         justify-content: center;
       }
 
-      .flag-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: var(--transition);
-      }
-
-      .flag-fallback {
+      .flag-display {
         width: 100%;
         height: 100%;
         display: flex;
@@ -303,11 +296,11 @@
         justify-content: center;
         font-size: 1.5rem;
         font-weight: bold;
-        color: #374151;
-        background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
+        transition: var(--transition);
+        position: relative;
       }
 
-      .state-card:hover .flag-image {
+      .state-card:hover .flag-display {
         transform: scale(1.05);
       }
 
@@ -574,6 +567,116 @@
         margin-bottom: 0.5rem;
         color: #374151;
       }
+
+      /* Flag Styles */
+      .flag-alabama { background: #fff; color: #b10021; }
+      .flag-alaska { background: #003f7f; color: #fff; }
+      .flag-arizona { background: #3b82f6; color: #fff; }
+      .flag-arkansas { background: #dc2626; color: #fff; }
+      .flag-california { background: #fff; color: #b71234; }
+      .flag-colorado { background: #3b82f6; color: #fff; }
+      .flag-connecticut { background: #003f7f; color: #fff; }
+      .flag-delaware { background: #1e40af; color: #fff; }
+      .flag-florida { background: #fff; color: #dc143c; }
+      .flag-georgia { background: #fff; color: #dc143c; }
+      .flag-hawaii { background: #1e40af; color: #fff; }
+      .flag-idaho { background: #1e40af; color: #fff; }
+      .flag-illinois { background: #fff; color: #1f2937; }
+      .flag-indiana { background: #1e40af; color: #fff; }
+      .flag-iowa { background: #3b82f6; color: #fff; }
+      .flag-kansas { background: #1e40af; color: #fff; }
+      .flag-kentucky { background: #1e40af; color: #fff; }
+      .flag-louisiana { background: #3b82f6; color: #fff; }
+      .flag-maine { background: #1e40af; color: #fff; }
+      .flag-maryland { background: #dc2626; color: #fff; }
+      .flag-massachusetts { background: #fff; color: #1f2937; }
+      .flag-michigan { background: #1e40af; color: #fff; }
+      .flag-minnesota { background: #1e40af; color: #fff; }
+      .flag-mississippi { background: #dc2626; color: #fff; }
+      .flag-missouri { background: #dc2626; color: #fff; }
+      .flag-montana { background: #1e40af; color: #fff; }
+      .flag-nebraska { background: #1e40af; color: #fff; }
+      .flag-nevada { background: #1e40af; color: #fff; }
+      .flag-new-hampshire { background: #1e40af; color: #fff; }
+      .flag-new-jersey { background: #eab308; color: #1f2937; }
+      .flag-new-mexico { background: #dc2626; color: #fff; }
+      .flag-new-york { background: #1e40af; color: #fff; }
+      .flag-north-carolina { background: #dc2626; color: #fff; }
+      .flag-north-dakota { background: #1e40af; color: #fff; }
+      .flag-ohio { background: #dc2626; color: #fff; }
+      .flag-oklahoma { background: #1e40af; color: #fff; }
+      .flag-oregon { background: #1e40af; color: #fff; }
+      .flag-pennsylvania { background: #1e40af; color: #fff; }
+      .flag-rhode-island { background: #fff; color: #1f2937; }
+      .flag-south-carolina { background: #1e40af; color: #fff; }
+      .flag-south-dakota { background: #1e40af; color: #fff; }
+      .flag-tennessee { background: #dc2626; color: #fff; }
+      .flag-texas { background: #dc2626; color: #fff; }
+      .flag-utah { background: #1e40af; color: #fff; }
+      .flag-vermont { background: #16a34a; color: #fff; }
+      .flag-virginia { background: #1e40af; color: #fff; }
+      .flag-washington { background: #16a34a; color: #fff; }
+      .flag-washington-dc { background: #dc2626; color: #fff; }
+      .flag-west-virginia { background: #fff; color: #1f2937; }
+      .flag-wisconsin { background: #dc2626; color: #fff; }
+      .flag-wyoming { background: #1e40af; color: #fff; }
+
+      /* Special flag patterns for key states */
+      .flag-alabama::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 40%, #b10021 40%, #b10021 60%, transparent 60%), 
+                    linear-gradient(-45deg, transparent 40%, #b10021 40%, #b10021 60%, transparent 60%);
+      }
+
+      .flag-california::after {
+        content: '★';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        color: #b71234;
+        font-size: 20px;
+      }
+
+      .flag-texas::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30%;
+        height: 100%;
+        background: #00205b;
+      }
+
+      .flag-texas::after {
+        content: '★';
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        font-size: 24px;
+      }
+
+      .flag-georgia::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+          0deg,
+          #dc143c 0px,
+          #dc143c 30px,
+          #fff 30px,
+          #fff 60px
+        );
+      }
     </style>
   </head>
   <body class="bg-gray-50">
@@ -833,75 +936,6 @@
     </footer>
 
     <script>
-      // Embedded flag SVGs for key states
-      const flagSVGs = {
-        'california': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600"%3E%3Crect fill="%23fff" width="900" height="600"/%3E%3Crect fill="%23b71234" y="500" width="900" height="100"/%3E%3Cpolygon fill="%23b71234" points="150 75 160.1 106.09 192.8 106.09 166.35 125.31 176.45 156.41 150 137.19 123.55 156.41 133.65 125.31 107.2 106.09 139.9 106.09 150 75"/%3E%3C/svg%3E',
-        'texas': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="900" height="600"%3E%3Cpath d="M0 0h900v600H0z" fill="%23BF0D3E"/%3E%3Cpath d="M0 0h900v300H0z" fill="%23FFF"/%3E%3Cpath d="M0 0h300v600H0z" fill="%2300205B"/%3E%3Cg fill="%23FFF" transform="translate(150 300)"%3E%3Cpath d="M0-112.5V0h50" transform="rotate(18 0 -112.5)"/%3E%3Cpath d="M0-112.5V0h-50" transform="rotate(18 0 -112.5)"/%3E%3C/g%3E%3C/svg%3E',
-        'florida': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Cpath fill="%23fff" d="M0 0h600v400H0z"/%3E%3Cpath d="M0,0 600,400M0,400 600,0" stroke="%23dc143c" stroke-width="40"/%3E%3C/svg%3E',
-        'new-york': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E',
-        'pennsylvania': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E',
-        'illinois': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23fff" width="600" height="400"/%3E%3C/svg%3E',
-        'ohio': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23dc143c" width="600" height="400"/%3E%3C/svg%3E',
-        'georgia': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23fff" width="600" height="400"/%3E%3Crect fill="%23dc143c" y="0" width="600" height="80"/%3E%3Crect fill="%23dc143c" y="160" width="600" height="80"/%3E%3Crect fill="%23dc143c" y="320" width="600" height="80"/%3E%3C/svg%3E',
-        'north-carolina': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23dc143c" width="600" height="400"/%3E%3Crect fill="%23fff" y="130" width="600" height="140"/%3E%3Crect fill="%23003f7f" x="0" y="0" width="200" height="400"/%3E%3C/svg%3E',
-        'michigan': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E'
-      };
-
-      // State color schemes for fallback displays
-      const stateColors = {
-        'alabama': { bg: '#fff', text: '#b10021' },
-        'alaska': { bg: '#1e3a8a', text: '#fff' },
-        'arizona': { bg: '#3b82f6', text: '#fff' },
-        'arkansas': { bg: '#dc2626', text: '#fff' },
-        'california': { bg: '#fff', text: '#b71234' },
-        'colorado': { bg: '#3b82f6', text: '#fff' },
-        'connecticut': { bg: '#1e3a8a', text: '#fff' },
-        'delaware': { bg: '#1e40af', text: '#fff' },
-        'florida': { bg: '#fff', text: '#dc143c' },
-        'georgia': { bg: '#fff', text: '#dc143c' },
-        'hawaii': { bg: '#1e40af', text: '#fff' },
-        'idaho': { bg: '#1e40af', text: '#fff' },
-        'illinois': { bg: '#fff', text: '#1f2937' },
-        'indiana': { bg: '#1e40af', text: '#fff' },
-        'iowa': { bg: '#3b82f6', text: '#fff' },
-        'kansas': { bg: '#1e40af', text: '#fff' },
-        'kentucky': { bg: '#1e40af', text: '#fff' },
-        'louisiana': { bg: '#3b82f6', text: '#fff' },
-        'maine': { bg: '#1e40af', text: '#fff' },
-        'maryland': { bg: '#dc2626', text: '#fff' },
-        'massachusetts': { bg: '#fff', text: '#1f2937' },
-        'michigan': { bg: '#1e40af', text: '#fff' },
-        'minnesota': { bg: '#1e40af', text: '#fff' },
-        'mississippi': { bg: '#dc2626', text: '#fff' },
-        'missouri': { bg: '#dc2626', text: '#fff' },
-        'montana': { bg: '#1e40af', text: '#fff' },
-        'nebraska': { bg: '#1e40af', text: '#fff' },
-        'nevada': { bg: '#1e40af', text: '#fff' },
-        'new-hampshire': { bg: '#1e40af', text: '#fff' },
-        'new-jersey': { bg: '#eab308', text: '#1f2937' },
-        'new-mexico': { bg: '#dc2626', text: '#fff' },
-        'new-york': { bg: '#1e40af', text: '#fff' },
-        'north-carolina': { bg: '#dc2626', text: '#fff' },
-        'north-dakota': { bg: '#1e40af', text: '#fff' },
-        'ohio': { bg: '#dc2626', text: '#fff' },
-        'oklahoma': { bg: '#1e40af', text: '#fff' },
-        'oregon': { bg: '#1e40af', text: '#fff' },
-        'pennsylvania': { bg: '#1e40af', text: '#fff' },
-        'rhode-island': { bg: '#fff', text: '#1f2937' },
-        'south-carolina': { bg: '#1e40af', text: '#fff' },
-        'south-dakota': { bg: '#1e40af', text: '#fff' },
-        'tennessee': { bg: '#dc2626', text: '#fff' },
-        'texas': { bg: '#dc2626', text: '#fff' },
-        'utah': { bg: '#1e40af', text: '#fff' },
-        'vermont': { bg: '#16a34a', text: '#fff' },
-        'virginia': { bg: '#1e40af', text: '#fff' },
-        'washington': { bg: '#16a34a', text: '#fff' },
-        'washington-dc': { bg: '#dc2626', text: '#fff' },
-        'west-virginia': { bg: '#fff', text: '#1f2937' },
-        'wisconsin': { bg: '#dc2626', text: '#fff' },
-        'wyoming': { bg: '#1e40af', text: '#fff' }
-      };
-
       // State data
       const states = [
         { id: "alabama", name: "Alabama", abbreviation: "AL", dmvUrl: "https://revenue.alabama.gov/motor-vehicle/", departmentName: "Motor Vehicle Division" },
@@ -976,18 +1010,12 @@
         noResults.classList.add('hidden');
         
         grid.innerHTML = statesToRender.map(state => {
-          const colors = stateColors[state.id] || { bg: '#f3f4f6', text: '#374151' };
-          const flagSrc = flagSVGs[state.id];
-          
           return `
             <a href="${state.dmvUrl}" target="_blank" rel="noopener noreferrer" class="state-card">
               <div class="flag-container">
-                ${flagSrc ? 
-                  `<img src="${flagSrc}" alt="${state.name} flag" class="flag-image">` :
-                  `<div class="flag-fallback" style="background: ${colors.bg}; color: ${colors.text};">
-                    ${state.abbreviation}
-                  </div>`
-                }
+                <div class="flag-display flag-${state.id}">
+                  ${state.abbreviation}
+                </div>
               </div>
               <div class="state-info">
                 <div class="state-name">${state.name}</div>
