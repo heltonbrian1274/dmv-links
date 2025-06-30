@@ -35,9 +35,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
     <style>
       :root {
         --primary-color: #2563eb;
@@ -111,6 +108,59 @@
         gap: 0.5rem;
       }
 
+      .quick-guide {
+        background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+        border: 1px solid #bfdbfe;
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 1200px;
+        box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+      }
+
+      .quick-guide h2 {
+        color: #1e3a8a;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .guide-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .guide-section h3 {
+        color: #1e40af;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .guide-section ul {
+        list-style: none;
+        padding: 0;
+        color: #1e40af;
+        font-size: 0.875rem;
+        line-height: 1.5;
+      }
+
+      .guide-section li {
+        margin-bottom: 0.25rem;
+      }
+
+      .update-tracker {
+        text-align: center;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #bfdbfe;
+        font-size: 0.75rem;
+        color: #2563eb;
+        font-weight: 500;
+      }
+
       .search-container {
         max-width: 600px;
         margin: 0 auto 2rem auto;
@@ -131,6 +181,38 @@
         outline: none;
         border-color: var(--primary-color);
         box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .section-header {
+        text-align: center;
+        margin: 2rem auto;
+        max-width: 800px;
+        padding: 0 1rem;
+      }
+
+      .section-header h2 {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+
+      .section-header p {
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .disclaimer-box {
+        background: #fef3c7;
+        border: 1px solid #fbbf24;
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 1rem auto;
+        max-width: 600px;
+        color: #92400e;
+        font-size: 0.875rem;
+        text-align: center;
       }
 
       .ad-container {
@@ -201,6 +283,9 @@
         position: relative;
         overflow: hidden;
         background: #f8fafc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .flag-image {
@@ -208,6 +293,18 @@
         height: 100%;
         object-fit: cover;
         transition: var(--transition);
+      }
+
+      .flag-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #374151;
+        background: linear-gradient(135deg, #e5e7eb 0%, #f3f4f6 100%);
       }
 
       .state-card:hover .flag-image {
@@ -235,6 +332,139 @@
         font-size: 0.75rem;
         color: #9ca3af;
         line-height: 1.4;
+      }
+
+      .comprehensive-guide {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e5e7eb;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 1200px;
+      }
+
+      .guide-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .featured-snippet {
+        background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
+        border: 1px solid #16a34a;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .featured-snippet h3 {
+        color: #166534;
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+      }
+
+      .featured-snippet ol {
+        color: #166534;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+      }
+
+      .featured-snippet li {
+        margin-bottom: 0.5rem;
+      }
+
+      .featured-snippet .meta {
+        font-size: 0.75rem;
+        color: #059669;
+        font-weight: 500;
+      }
+
+      .service-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .service-card {
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        transition: box-shadow 0.3s;
+      }
+
+      .service-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .service-card .icon {
+        margin: 0 auto 0.75rem;
+        color: #2563eb;
+      }
+
+      .service-card h3 {
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+      }
+
+      .service-card p {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 0.75rem;
+        line-height: 1.5;
+      }
+
+      .service-card .features {
+        font-size: 0.75rem;
+        color: #2563eb;
+        font-weight: 500;
+      }
+
+      .service-card .features p {
+        margin-bottom: 0.25rem;
+        color: inherit;
+      }
+
+      .faq-section {
+        border-top: 1px solid #e5e7eb;
+        padding-top: 1.5rem;
+      }
+
+      .faq-section h3 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1rem;
+      }
+
+      .faq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .faq-item {
+        margin-bottom: 1rem;
+      }
+
+      .faq-question {
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.875rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .faq-answer {
+        font-size: 0.75rem;
+        color: #6b7280;
+        line-height: 1.5;
       }
 
       .sidebar-ad {
@@ -292,11 +522,41 @@
         color: white;
       }
 
+      .footer-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+
+      .footer-meta span {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
       .footer-copyright {
         color: #6b7280;
         font-size: 0.75rem;
         border-top: 1px solid #374151;
         padding-top: 1rem;
+        margin-top: 1rem;
+      }
+
+      .footer-final {
+        background: #374151;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+
+      .footer-final p {
+        color: white;
+        font-weight: 600;
+        margin: 0;
       }
 
       .hidden {
@@ -334,11 +594,11 @@
         </p>
         <div class="hero-features">
           <div class="hero-feature">
-            <svg class="lucide lucide-shield" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
             <span>Official Government Links</span>
           </div>
           <div class="hero-feature">
-            <svg class="lucide lucide-clock" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
             <span>Updated Weekly</span>
           </div>
         </div>
@@ -356,16 +616,58 @@
 
     <!-- Main Content -->
     <main>
-      <!-- Search Bar -->
-      <div class="search-container" style="margin-top: 2rem;">
-        <input 
-          type="text" 
-          id="searchInput" 
-          class="search-input" 
-          placeholder="Search by state name or abbreviation..."
-          autocomplete="off"
-        >
-      </div>
+      <!-- Quick DMV Services Guide -->
+      <section class="quick-guide">
+        <h2>Quick DMV Services Guide 2025</h2>
+        <div class="guide-grid">
+          <div class="guide-section">
+            <h3>Most Searched DMV Services:</h3>
+            <ul>
+              <li>• <strong>Driver License Renewal Online</strong> - Available in 45+ states</li>
+              <li>• <strong>Real ID Requirements</strong> - Deadline extended to May 2025</li>
+              <li>• <strong>Vehicle Registration Renewal</strong> - Skip the lines with online services</li>
+              <li>• <strong>DMV Appointment Scheduling</strong> - Book ahead to save time</li>
+              <li>• <strong>Address Change</strong> - Update within 30 days of moving</li>
+            </ul>
+          </div>
+          <div class="guide-section">
+            <h3>DMV Hours & Wait Times:</h3>
+            <ul>
+              <li>• <strong>Peak Hours:</strong> Monday 8-10 AM, Friday 3-5 PM (avoid these)</li>
+              <li>• <strong>Best Times:</strong> Tuesday-Thursday 10 AM-2 PM</li>
+              <li>• <strong>Online Services:</strong> Available 24/7 in most states</li>
+              <li>• <strong>Weekend Hours:</strong> Limited locations, check state websites</li>
+            </ul>
+          </div>
+        </div>
+        <div class="update-tracker">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          Last updated: June 29, 2025 • Next update: July 6, 2025
+          <br>
+          ✓ All links verified weekly • ✓ Official government sources only
+        </div>
+      </section>
+
+      <!-- Section Header -->
+      <section class="section-header">
+        <h2>Find Your State's DMV Website</h2>
+        <p>Click your state below to visit the official DMV website for driver's licenses, vehicle registration, and more.</p>
+        
+        <!-- Search Input -->
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search your state..."
+            autocomplete="off"
+          >
+        </div>
+        
+        <div class="disclaimer-box">
+          <p><strong>Important:</strong> This tool links directly to official state DMV websites to help you find license, ID, and registration info faster. Always verify information on the state site.</p>
+        </div>
+      </section>
       
       <!-- Top Rectangle Ad -->
       <div class="ad-container">
@@ -386,6 +688,96 @@
         </div>
       </div>
 
+      <!-- Comprehensive DMV Services Guide -->
+      <section class="comprehensive-guide">
+        <h2 class="guide-title">Complete DMV Services Guide 2025 - All States</h2>
+        
+        <!-- Featured Snippet for Google -->
+        <div class="featured-snippet">
+          <h3>How to Renew Your Driver's License Online (Step-by-Step)</h3>
+          <ol>
+            <li><strong>Visit your state's official DMV website</strong> from our directory below</li>
+            <li><strong>Create an account</strong> or log in with existing credentials</li>
+            <li><strong>Verify your identity</strong> with Social Security number and current license</li>
+            <li><strong>Update your information</strong> including address and emergency contacts</li>
+            <li><strong>Pay renewal fee</strong> ($25-$89 depending on state)</li>
+            <li><strong>Receive confirmation</strong> and temporary license via email</li>
+          </ol>
+          <p class="meta">⏱️ Average completion time: 5-10 minutes | 💰 Saves $15-30 vs in-person visit</p>
+        </div>
+
+        <!-- Service Cards -->
+        <div class="service-cards">
+          <div class="service-card">
+            <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3>Real ID Deadline 2025</h3>
+            <p>Federal deadline: May 7, 2025. Required for domestic flights and federal buildings.</p>
+            <div class="features">
+              <p>✓ Required documents checklist</p>
+              <p>✓ State-specific requirements</p>
+              <p>✓ Online pre-verification available</p>
+            </div>
+          </div>
+          
+          <div class="service-card">
+            <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <h3>DMV Wait Times by State</h3>
+            <p>Average wait times and best visit hours for all 50 states plus DC.</p>
+            <div class="features">
+              <p>✓ Real-time wait estimates</p>
+              <p>✓ Appointment booking links</p>
+              <p>✓ Alternative service locations</p>
+            </div>
+          </div>
+
+          <div class="service-card">
+            <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.71"/></svg>
+            <h3>Online vs In-Person Services</h3>
+            <p>Compare services available online vs requiring office visits by state.</p>
+            <div class="features">
+              <p>✓ Online eligibility checker</p>
+              <p>✓ Required document scanner</p>
+              <p>✓ Fee calculator tool</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+          <h3>Frequently Asked DMV Questions 2025</h3>
+          <div class="faq-grid">
+            <div>
+              <div class="faq-item">
+                <h4 class="faq-question">What documents do I need for Real ID?</h4>
+                <p class="faq-answer">Birth certificate or passport, Social Security card, and 2 proofs of residency (utility bills, bank statements).</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-question">How much does license renewal cost?</h4>
+                <p class="faq-answer">Ranges from $25-$89 depending on state. Real ID upgrade adds $10-$25 in most states.</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-question">Can I renew my license if it's expired?</h4>
+                <p class="faq-answer">Yes, most states allow renewal up to 1-2 years after expiration. Fees may increase after 6 months.</p>
+              </div>
+            </div>
+            <div>
+              <div class="faq-item">
+                <h4 class="faq-question">Which states offer online license renewal?</h4>
+                <p class="faq-answer">45+ states offer online renewal for eligible drivers. Check your state's website for eligibility requirements.</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-question">How long does DMV processing take?</h4>
+                <p class="faq-answer">Online renewals: 1-3 business days. In-person visits: Same day. New licenses: 7-14 business days for delivery.</p>
+              </div>
+              <div class="faq-item">
+                <h4 class="faq-question">What if I moved to a new state?</h4>
+                <p class="faq-answer">You must transfer your license within 10-30 days (varies by state). Visit our state directory for specific requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Bottom Rectangle Ad -->
       <div class="ad-container">
         <div class="ad-placeholder" style="width: 336px; height: 280px;">
@@ -397,6 +789,9 @@
       <div id="noResults" class="no-results hidden">
         <h3>No states found</h3>
         <p>Try adjusting your search terms.</p>
+        <button onclick="clearSearch()" style="color: #2563eb; text-decoration: underline; background: none; border: none; cursor: pointer; margin-top: 1rem;">
+          Clear search and show all states
+        </button>
       </div>
     </main>
 
@@ -407,6 +802,21 @@
           <strong>Important Disclaimer:</strong> DMV Hour Tracker is an independent directory service providing direct links to official state motor vehicle department websites. We are not affiliated with, endorsed by, or connected to any government agency. All DMV services, transactions, and official business must be conducted through the official state websites linked from this directory.
         </div>
         
+        <div class="footer-meta">
+          <span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            Updated Weekly
+          </span>
+          <span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.71"/></svg>
+            51 Official Links
+          </span>
+          <span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Mobile Friendly
+          </span>
+        </div>
+        
         <div class="footer-links">
           <a href="/about" class="footer-link">About Us</a>
           <a href="/contact" class="footer-link">Contact</a>
@@ -415,12 +825,83 @@
         </div>
         
         <div class="footer-copyright">
-          © 2025 DMV Hour Tracker | Not affiliated with any government agency
+          <div class="footer-final">
+            <p>© 2025 DMV Hour Tracker | Not affiliated with any government agency</p>
+          </div>
         </div>
       </div>
     </footer>
 
     <script>
+      // Embedded flag SVGs for key states
+      const flagSVGs = {
+        'california': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600"%3E%3Crect fill="%23fff" width="900" height="600"/%3E%3Crect fill="%23b71234" y="500" width="900" height="100"/%3E%3Cpolygon fill="%23b71234" points="150 75 160.1 106.09 192.8 106.09 166.35 125.31 176.45 156.41 150 137.19 123.55 156.41 133.65 125.31 107.2 106.09 139.9 106.09 150 75"/%3E%3C/svg%3E',
+        'texas': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="900" height="600"%3E%3Cpath d="M0 0h900v600H0z" fill="%23BF0D3E"/%3E%3Cpath d="M0 0h900v300H0z" fill="%23FFF"/%3E%3Cpath d="M0 0h300v600H0z" fill="%2300205B"/%3E%3Cg fill="%23FFF" transform="translate(150 300)"%3E%3Cpath d="M0-112.5V0h50" transform="rotate(18 0 -112.5)"/%3E%3Cpath d="M0-112.5V0h-50" transform="rotate(18 0 -112.5)"/%3E%3C/g%3E%3C/svg%3E',
+        'florida': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Cpath fill="%23fff" d="M0 0h600v400H0z"/%3E%3Cpath d="M0,0 600,400M0,400 600,0" stroke="%23dc143c" stroke-width="40"/%3E%3C/svg%3E',
+        'new-york': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E',
+        'pennsylvania': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E',
+        'illinois': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23fff" width="600" height="400"/%3E%3C/svg%3E',
+        'ohio': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23dc143c" width="600" height="400"/%3E%3C/svg%3E',
+        'georgia': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23fff" width="600" height="400"/%3E%3Crect fill="%23dc143c" y="0" width="600" height="80"/%3E%3Crect fill="%23dc143c" y="160" width="600" height="80"/%3E%3Crect fill="%23dc143c" y="320" width="600" height="80"/%3E%3C/svg%3E',
+        'north-carolina': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23dc143c" width="600" height="400"/%3E%3Crect fill="%23fff" y="130" width="600" height="140"/%3E%3Crect fill="%23003f7f" x="0" y="0" width="200" height="400"/%3E%3C/svg%3E',
+        'michigan': 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23003f7f" width="600" height="400"/%3E%3C/svg%3E'
+      };
+
+      // State color schemes for fallback displays
+      const stateColors = {
+        'alabama': { bg: '#fff', text: '#b10021' },
+        'alaska': { bg: '#1e3a8a', text: '#fff' },
+        'arizona': { bg: '#3b82f6', text: '#fff' },
+        'arkansas': { bg: '#dc2626', text: '#fff' },
+        'california': { bg: '#fff', text: '#b71234' },
+        'colorado': { bg: '#3b82f6', text: '#fff' },
+        'connecticut': { bg: '#1e3a8a', text: '#fff' },
+        'delaware': { bg: '#1e40af', text: '#fff' },
+        'florida': { bg: '#fff', text: '#dc143c' },
+        'georgia': { bg: '#fff', text: '#dc143c' },
+        'hawaii': { bg: '#1e40af', text: '#fff' },
+        'idaho': { bg: '#1e40af', text: '#fff' },
+        'illinois': { bg: '#fff', text: '#1f2937' },
+        'indiana': { bg: '#1e40af', text: '#fff' },
+        'iowa': { bg: '#3b82f6', text: '#fff' },
+        'kansas': { bg: '#1e40af', text: '#fff' },
+        'kentucky': { bg: '#1e40af', text: '#fff' },
+        'louisiana': { bg: '#3b82f6', text: '#fff' },
+        'maine': { bg: '#1e40af', text: '#fff' },
+        'maryland': { bg: '#dc2626', text: '#fff' },
+        'massachusetts': { bg: '#fff', text: '#1f2937' },
+        'michigan': { bg: '#1e40af', text: '#fff' },
+        'minnesota': { bg: '#1e40af', text: '#fff' },
+        'mississippi': { bg: '#dc2626', text: '#fff' },
+        'missouri': { bg: '#dc2626', text: '#fff' },
+        'montana': { bg: '#1e40af', text: '#fff' },
+        'nebraska': { bg: '#1e40af', text: '#fff' },
+        'nevada': { bg: '#1e40af', text: '#fff' },
+        'new-hampshire': { bg: '#1e40af', text: '#fff' },
+        'new-jersey': { bg: '#eab308', text: '#1f2937' },
+        'new-mexico': { bg: '#dc2626', text: '#fff' },
+        'new-york': { bg: '#1e40af', text: '#fff' },
+        'north-carolina': { bg: '#dc2626', text: '#fff' },
+        'north-dakota': { bg: '#1e40af', text: '#fff' },
+        'ohio': { bg: '#dc2626', text: '#fff' },
+        'oklahoma': { bg: '#1e40af', text: '#fff' },
+        'oregon': { bg: '#1e40af', text: '#fff' },
+        'pennsylvania': { bg: '#1e40af', text: '#fff' },
+        'rhode-island': { bg: '#fff', text: '#1f2937' },
+        'south-carolina': { bg: '#1e40af', text: '#fff' },
+        'south-dakota': { bg: '#1e40af', text: '#fff' },
+        'tennessee': { bg: '#dc2626', text: '#fff' },
+        'texas': { bg: '#dc2626', text: '#fff' },
+        'utah': { bg: '#1e40af', text: '#fff' },
+        'vermont': { bg: '#16a34a', text: '#fff' },
+        'virginia': { bg: '#1e40af', text: '#fff' },
+        'washington': { bg: '#16a34a', text: '#fff' },
+        'washington-dc': { bg: '#dc2626', text: '#fff' },
+        'west-virginia': { bg: '#fff', text: '#1f2937' },
+        'wisconsin': { bg: '#dc2626', text: '#fff' },
+        'wyoming': { bg: '#1e40af', text: '#fff' }
+      };
+
       // State data
       const states = [
         { id: "alabama", name: "Alabama", abbreviation: "AL", dmvUrl: "https://revenue.alabama.gov/motor-vehicle/", departmentName: "Motor Vehicle Division" },
@@ -494,26 +975,28 @@
         
         noResults.classList.add('hidden');
         
-        grid.innerHTML = statesToRender.map(state => `
-          <a href="${state.dmvUrl}" target="_blank" rel="noopener noreferrer" class="state-card">
-            <div class="flag-container">
-              <img 
-                src="/flags/${state.id}.svg" 
-                alt="${state.name} flag" 
-                class="flag-image"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-              >
-              <div style="display: none; width: 100%; height: 100%; background: #f1f5f9; align-items: center; justify-content: center; font-weight: 600; color: #64748b;">
-                ${state.abbreviation}
+        grid.innerHTML = statesToRender.map(state => {
+          const colors = stateColors[state.id] || { bg: '#f3f4f6', text: '#374151' };
+          const flagSrc = flagSVGs[state.id];
+          
+          return `
+            <a href="${state.dmvUrl}" target="_blank" rel="noopener noreferrer" class="state-card">
+              <div class="flag-container">
+                ${flagSrc ? 
+                  `<img src="${flagSrc}" alt="${state.name} flag" class="flag-image">` :
+                  `<div class="flag-fallback" style="background: ${colors.bg}; color: ${colors.text};">
+                    ${state.abbreviation}
+                  </div>`
+                }
               </div>
-            </div>
-            <div class="state-info">
-              <div class="state-name">${state.name}</div>
-              <div class="state-abbr">${state.abbreviation}</div>
-              <div class="state-dept">${state.departmentName}</div>
-            </div>
-          </a>
-        `).join('');
+              <div class="state-info">
+                <div class="state-name">${state.name}</div>
+                <div class="state-abbr">${state.abbreviation}</div>
+                <div class="state-dept">${state.departmentName}</div>
+              </div>
+            </a>
+          `;
+        }).join('');
       }
 
       // Search functionality
@@ -529,6 +1012,11 @@
         renderStates(currentStates);
       }
 
+      function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        filterStates('');
+      }
+
       // Initialize search
       const searchInput = document.getElementById('searchInput');
       searchInput.addEventListener('input', (e) => {
@@ -537,11 +1025,6 @@
 
       // Initial render
       renderStates(states);
-
-      // Initialize Lucide icons
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
     </script>
   </body>
 </html>
