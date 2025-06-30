@@ -25,217 +25,570 @@
     <meta name="twitter:title" content="DMV Hour Tracker – Official State DMV Links" />
     <meta name="twitter:description" content="Click your state to access the official DMV website. All 50 states. No ads, no distractions." />
     
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DMV Links",
+      "description": "Official directory of DMV websites for all 50 US states and Washington DC",
+      "url": "https://dmv-links.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://dmv-links.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "DMV Links",
+        "url": "https://dmv-links.com"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GovernmentService",
+      "name": "DMV Services Directory",
+      "description": "Directory of official state Department of Motor Vehicles websites and services",
+      "provider": {
+        "@type": "Organization",
+        "name": "DMV Links"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": "Government Information Directory"
+    }
+    </script>
+
+    <!-- Performance Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='65' font-family='Arial, sans-serif' font-size='60' font-weight='bold' fill='white' text-anchor='middle'%3ED%3C/text%3E%3C/svg%3E">
     
-    <!-- AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-placeholder"></script>
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8938931278494081" crossorigin="anonymous"></script>
     
     <style>
-      :root {
-        --primary-color: #2563eb;
-        --primary-hover: #1d4ed8;
-        --secondary-color: #64748b;
-        --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --card-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
-        --border-radius: 15px;
-        --transition: all 0.3s ease;
+      /* Complete Tailwind CSS styles for the DMV site */
+      *, ::before, ::after {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
+      }
+
+      ::backdrop {
+        --tw-border-spacing-x: 0;
+        --tw-border-spacing-y: 0;
+        --tw-translate-x: 0;
+        --tw-translate-y: 0;
+        --tw-rotate: 0;
+        --tw-skew-x: 0;
+        --tw-skew-y: 0;
+        --tw-scale-x: 1;
+        --tw-scale-y: 1;
+        --tw-pan-x: ;
+        --tw-pan-y: ;
+        --tw-pinch-zoom: ;
+        --tw-scroll-snap-strictness: proximity;
+        --tw-gradient-from-position: ;
+        --tw-gradient-via-position: ;
+        --tw-gradient-to-position: ;
+        --tw-ordinal: ;
+        --tw-slashed-zero: ;
+        --tw-numeric-figure: ;
+        --tw-numeric-spacing: ;
+        --tw-numeric-fraction: ;
+        --tw-ring-inset: ;
+        --tw-ring-offset-width: 0px;
+        --tw-ring-offset-color: #fff;
+        --tw-ring-color: rgb(59 130 246 / 0.5);
+        --tw-ring-offset-shadow: 0 0 #0000;
+        --tw-ring-shadow: 0 0 #0000;
+        --tw-shadow: 0 0 #0000;
+        --tw-shadow-colored: 0 0 #0000;
+        --tw-blur: ;
+        --tw-brightness: ;
+        --tw-contrast: ;
+        --tw-grayscale: ;
+        --tw-hue-rotate: ;
+        --tw-invert: ;
+        --tw-saturate: ;
+        --tw-sepia: ;
+        --tw-drop-shadow: ;
+        --tw-backdrop-blur: ;
+        --tw-backdrop-brightness: ;
+        --tw-backdrop-contrast: ;
+        --tw-backdrop-grayscale: ;
+        --tw-backdrop-hue-rotate: ;
+        --tw-backdrop-invert: ;
+        --tw-backdrop-opacity: ;
+        --tw-backdrop-saturate: ;
+        --tw-backdrop-sepia: ;
       }
 
       * {
-        margin: 0;
-        padding: 0;
         box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: #e5e7eb;
       }
 
-      html, body {
+      ::before, ::after {
+        --tw-content: '';
+      }
+
+      html {
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+        -moz-tab-size: 4;
+        tab-size: 4;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-feature-settings: normal;
+        font-variation-settings: normal;
+      }
+
+      body {
+        margin: 0;
+        line-height: inherit;
+        background-color: #f9fafb;
         overflow-x: hidden;
         width: 100%;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          max-width: 640px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 768px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .container {
+          max-width: 1024px;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .container {
+          max-width: 1280px;
+        }
+      }
+
+      @media (min-width: 1536px) {
+        .container {
+          max-width: 1536px;
+        }
       }
 
       .bg-gray-50 {
-        background-color: #f9fafb;
+        --tw-bg-opacity: 1;
+        background-color: rgb(249 250 251 / var(--tw-bg-opacity));
       }
 
-      .hero-section {
-        background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-        color: white;
-        padding: 3rem 1rem;
+      .bg-white {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      }
+
+      .bg-gradient-to-br {
+        background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+      }
+
+      .from-blue-600 {
+        --tw-gradient-from: #2563eb var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(37 99 235 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+
+      .to-indigo-700 {
+        --tw-gradient-to: #3730a3 var(--tw-gradient-to-position);
+      }
+
+      .text-white {
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity));
+      }
+
+      .text-blue-100 {
+        --tw-text-opacity: 1;
+        color: rgb(219 234 254 / var(--tw-text-opacity));
+      }
+
+      .text-blue-200 {
+        --tw-text-opacity: 1;
+        color: rgb(191 219 254 / var(--tw-text-opacity));
+      }
+
+      .text-gray-900 {
+        --tw-text-opacity: 1;
+        color: rgb(17 24 39 / var(--tw-text-opacity));
+      }
+
+      .text-gray-600 {
+        --tw-text-opacity: 1;
+        color: rgb(75 85 99 / var(--tw-text-opacity));
+      }
+
+      .text-center {
         text-align: center;
       }
 
-      .hero-title {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: bold;
-        margin-bottom: 1rem;
+      .font-bold {
+        font-weight: 700;
       }
 
-      .hero-subtitle {
-        font-size: clamp(1.1rem, 3vw, 1.25rem);
-        color: #bfdbfe;
-        margin-bottom: 1rem;
+      .font-semibold {
         font-weight: 600;
       }
 
-      .hero-description {
-        font-size: clamp(1rem, 2.5vw, 1.125rem);
-        color: #dbeafe;
+      .text-3xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+
+      .text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+      }
+
+      .text-lg {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+      }
+
+      .text-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
+
+      .text-base {
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+
+      .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+
+      .text-xs {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+
+      .mb-6 {
+        margin-bottom: 1.5rem;
+      }
+
+      .mb-8 {
         margin-bottom: 2rem;
-        max-width: 600px;
+      }
+
+      .mb-12 {
+        margin-bottom: 3rem;
+      }
+
+      .mb-16 {
+        margin-bottom: 4rem;
+      }
+
+      .mt-4 {
+        margin-top: 1rem;
+      }
+
+      .mt-8 {
+        margin-top: 2rem;
+      }
+
+      .py-12 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .py-16 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .py-20 {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .px-8 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+
+      .p-6 {
+        padding: 1.5rem;
+      }
+
+      .p-8 {
+        padding: 2rem;
+      }
+
+      .max-w-7xl {
+        max-width: 80rem;
+      }
+
+      .max-w-3xl {
+        max-width: 48rem;
+      }
+
+      .max-w-2xl {
+        max-width: 42rem;
+      }
+
+      .mx-auto {
         margin-left: auto;
         margin-right: auto;
       }
 
-      .hero-features {
+      .flex {
         display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.875rem;
-        margin-bottom: 2rem;
       }
 
-      .hero-feature {
-        display: flex;
+      .grid {
+        display: grid;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .flex-col {
+        flex-direction: column;
+      }
+
+      .flex-row {
+        flex-direction: row;
+      }
+
+      .items-center {
         align-items: center;
+      }
+
+      .justify-center {
+        justify-content: center;
+      }
+
+      .gap-2 {
         gap: 0.5rem;
       }
 
-      .quick-guide {
-        background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
-        border: 1px solid #bfdbfe;
-        border-radius: 12px;
-        padding: 2rem;
-        margin: 2rem auto;
-        max-width: 1200px;
-        box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+      .gap-3 {
+        gap: 0.75rem;
       }
 
-      .quick-guide h2 {
-        color: #1e3a8a;
-        font-size: 1.25rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-        text-align: center;
+      .gap-4 {
+        gap: 1rem;
       }
 
-      .guide-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      .gap-6 {
         gap: 1.5rem;
-        margin-bottom: 1rem;
       }
 
-      .guide-section h3 {
-        color: #1e40af;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-      }
-
-      .guide-section ul {
-        list-style: none;
-        padding: 0;
-        color: #1e40af;
-        font-size: 0.875rem;
-        line-height: 1.5;
-      }
-
-      .guide-section li {
-        margin-bottom: 0.25rem;
-      }
-
-      .update-tracker {
-        text-align: center;
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px solid #bfdbfe;
-        font-size: 0.75rem;
-        color: #2563eb;
-        font-weight: 500;
-      }
-
-      .search-container {
-        max-width: 600px;
-        margin: 0 auto 2rem auto;
-        padding: 0 1rem;
-      }
-
-      .search-input {
-        width: 100%;
-        padding: 0.875rem 1rem;
-        font-size: 1rem;
-        border: 2px solid #e5e7eb;
+      .rounded-xl {
         border-radius: 0.75rem;
-        background: white;
-        transition: border-color 0.2s;
       }
 
-      .search-input:focus {
-        outline: none;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      .border {
+        border-width: 1px;
       }
 
-      .section-header {
-        text-align: center;
-        margin: 2rem auto;
-        max-width: 800px;
-        padding: 0 1rem;
+      .border-blue-200 {
+        --tw-border-opacity: 1;
+        border-color: rgb(191 219 254 / var(--tw-border-opacity));
       }
 
-      .section-header h2 {
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        font-weight: bold;
-        color: #1f2937;
-        margin-bottom: 1rem;
+      .border-gray-200 {
+        --tw-border-opacity: 1;
+        border-color: rgb(229 231 235 / var(--tw-border-opacity));
       }
 
-      .section-header p {
-        color: #6b7280;
-        margin-bottom: 1.5rem;
-        line-height: 1.6;
+      .bg-gradient-to-r {
+        background-image: linear-gradient(to right, var(--tw-gradient-stops));
       }
 
-      .disclaimer-box {
-        background: #fef3c7;
-        border: 1px solid #fbbf24;
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 1rem auto;
-        max-width: 600px;
-        color: #92400e;
-        font-size: 0.875rem;
-        text-align: center;
+      .from-blue-50 {
+        --tw-gradient-from: #eff6ff var(--tw-gradient-from-position);
+        --tw-gradient-to: rgb(239 246 255 / 0) var(--tw-gradient-to-position);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
       }
 
-      .ad-container {
-        display: flex;
-        justify-content: center;
-        margin: 2rem auto;
-        padding: 0 1rem;
+      .to-indigo-50 {
+        --tw-gradient-to: #eef2ff var(--tw-gradient-to-position);
       }
 
-      .ad-placeholder {
-        background: #f3f4f6;
-        border: 2px dashed #d1d5db;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #6b7280;
-        font-size: 0.875rem;
-        font-weight: 500;
-        text-align: center;
-        padding: 1rem;
+      .shadow-sm {
+        --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
       }
 
+      .text-blue-900 {
+        --tw-text-opacity: 1;
+        color: rgb(30 58 138 / var(--tw-text-opacity));
+      }
+
+      .text-blue-800 {
+        --tw-text-opacity: 1;
+        color: rgb(30 64 175 / var(--tw-text-opacity));
+      }
+
+      .text-blue-700 {
+        --tw-text-opacity: 1;
+        color: rgb(29 78 216 / var(--tw-text-opacity));
+      }
+
+      .text-blue-600 {
+        --tw-text-opacity: 1;
+        color: rgb(37 99 235 / var(--tw-text-opacity));
+      }
+
+      .space-y-1 > :not([hidden]) ~ :not([hidden]) {
+        --tw-space-y-reverse: 0;
+        margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .grid-cols-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .grid-cols-6 {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .grid-cols-7 {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .grid-cols-8 {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+      }
+
+      .transition {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+
+      .hover\:transform:hover {
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      }
+
+      .hover\:scale-105:hover {
+        --tw-scale-x: 1.05;
+        --tw-scale-y: 1.05;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      }
+
+      .hover\:-translate-y-1:hover {
+        --tw-translate-y: -0.25rem;
+        transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+      }
+
+      .hover\:shadow-lg:hover {
+        --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      }
+
+      /* Custom styles for the DMV site */
       .states-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -243,6 +596,8 @@
         padding: 2rem 1rem;
         max-width: 1400px;
         margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       @media (max-width: 640px) {
@@ -261,20 +616,21 @@
 
       .state-card {
         background: white;
-        border-radius: var(--border-radius);
-        box-shadow: var(--card-shadow);
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        transition: var(--transition);
+        transition: all 0.3s ease;
         cursor: pointer;
         text-decoration: none;
         color: inherit;
         border: 2px solid transparent;
+        transform: translateY(0) scale(1);
       }
 
       .state-card:hover {
         transform: translateY(-4px) scale(1.02);
-        box-shadow: var(--card-shadow-hover);
-        border-color: var(--primary-color);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-color: #2563eb;
       }
 
       .flag-container {
@@ -288,19 +644,14 @@
         justify-content: center;
       }
 
-      .flag-display {
+      .flag-image {
         width: 100%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        transition: var(--transition);
-        position: relative;
+        object-fit: cover;
+        transition: transform 0.3s ease;
       }
 
-      .state-card:hover .flag-display {
+      .state-card:hover .flag-image {
         transform: scale(1.05);
       }
 
@@ -327,6 +678,61 @@
         line-height: 1.4;
       }
 
+      .search-input {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 0.75rem;
+        background: white;
+        transition: border-color 0.2s;
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .max-w-md {
+        max-width: 28rem;
+      }
+
+      .ad-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .ad-placeholder {
+        background: #f3f4f6;
+        border: 2px dashed #d1d5db;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-align: center;
+        padding: 1rem;
+      }
+
+      .sidebar-ad {
+        position: fixed;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+      }
+
+      @media (max-width: 1400px) {
+        .sidebar-ad {
+          display: none;
+        }
+      }
+
       .comprehensive-guide {
         background: white;
         border-radius: 12px;
@@ -335,14 +741,6 @@
         padding: 2rem;
         margin: 2rem auto;
         max-width: 1200px;
-      }
-
-      .guide-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #1f2937;
-        margin-bottom: 1.5rem;
-        text-align: center;
       }
 
       .featured-snippet {
@@ -365,6 +763,7 @@
         font-size: 0.875rem;
         line-height: 1.6;
         margin-bottom: 0.75rem;
+        padding-left: 1.5rem;
       }
 
       .featured-snippet li {
@@ -460,20 +859,6 @@
         line-height: 1.5;
       }
 
-      .sidebar-ad {
-        position: fixed;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-      }
-
-      @media (max-width: 1400px) {
-        .sidebar-ad {
-          display: none;
-        }
-      }
-
       .footer {
         background: #1f2937;
         color: white;
@@ -552,8 +937,122 @@
         margin: 0;
       }
 
-      .hidden {
-        display: none;
+      .bg-yellow-50 {
+        background-color: #fefce8;
+      }
+
+      .border-yellow-200 {
+        border-color: #fde047;
+      }
+
+      .text-yellow-800 {
+        color: #92400e;
+      }
+
+      .rounded-lg {
+        border-radius: 0.5rem;
+      }
+
+      .p-4 {
+        padding: 1rem;
+      }
+
+      .mx-4 {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      @media (min-width: 640px) {
+        .sm\:text-4xl {
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+        }
+
+        .sm\:text-xl {
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+        }
+
+        .sm\:text-lg {
+          font-size: 1.125rem;
+          line-height: 1.75rem;
+        }
+
+        .sm\:text-base {
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
+
+        .sm\:mb-6 {
+          margin-bottom: 1.5rem;
+        }
+
+        .sm\:mb-8 {
+          margin-bottom: 2rem;
+        }
+
+        .sm\:mb-12 {
+          margin-bottom: 3rem;
+        }
+
+        .sm\:mb-16 {
+          margin-bottom: 4rem;
+        }
+
+        .sm\:py-16 {
+          padding-top: 4rem;
+          padding-bottom: 4rem;
+        }
+
+        .sm\:px-6 {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+
+        .sm\:flex-row {
+          flex-direction: row;
+        }
+
+        .sm\:gap-4 {
+          gap: 1rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .md\:grid-cols-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .md\:grid-cols-3 {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .lg\:text-5xl {
+          font-size: 3rem;
+          line-height: 1;
+        }
+
+        .lg\:py-20 {
+          padding-top: 5rem;
+          padding-bottom: 5rem;
+        }
+
+        .lg\:px-8 {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+
+        .lg\:py-16 {
+          padding-top: 4rem;
+          padding-bottom: 4rem;
+        }
+
+        .lg\:py-12 {
+          padding-top: 3rem;
+          padding-bottom: 3rem;
+        }
       }
 
       .no-results {
@@ -568,114 +1067,18 @@
         color: #374151;
       }
 
-      /* Flag Styles */
-      .flag-alabama { background: #fff; color: #b10021; }
-      .flag-alaska { background: #003f7f; color: #fff; }
-      .flag-arizona { background: #3b82f6; color: #fff; }
-      .flag-arkansas { background: #dc2626; color: #fff; }
-      .flag-california { background: #fff; color: #b71234; }
-      .flag-colorado { background: #3b82f6; color: #fff; }
-      .flag-connecticut { background: #003f7f; color: #fff; }
-      .flag-delaware { background: #1e40af; color: #fff; }
-      .flag-florida { background: #fff; color: #dc143c; }
-      .flag-georgia { background: #fff; color: #dc143c; }
-      .flag-hawaii { background: #1e40af; color: #fff; }
-      .flag-idaho { background: #1e40af; color: #fff; }
-      .flag-illinois { background: #fff; color: #1f2937; }
-      .flag-indiana { background: #1e40af; color: #fff; }
-      .flag-iowa { background: #3b82f6; color: #fff; }
-      .flag-kansas { background: #1e40af; color: #fff; }
-      .flag-kentucky { background: #1e40af; color: #fff; }
-      .flag-louisiana { background: #3b82f6; color: #fff; }
-      .flag-maine { background: #1e40af; color: #fff; }
-      .flag-maryland { background: #dc2626; color: #fff; }
-      .flag-massachusetts { background: #fff; color: #1f2937; }
-      .flag-michigan { background: #1e40af; color: #fff; }
-      .flag-minnesota { background: #1e40af; color: #fff; }
-      .flag-mississippi { background: #dc2626; color: #fff; }
-      .flag-missouri { background: #dc2626; color: #fff; }
-      .flag-montana { background: #1e40af; color: #fff; }
-      .flag-nebraska { background: #1e40af; color: #fff; }
-      .flag-nevada { background: #1e40af; color: #fff; }
-      .flag-new-hampshire { background: #1e40af; color: #fff; }
-      .flag-new-jersey { background: #eab308; color: #1f2937; }
-      .flag-new-mexico { background: #dc2626; color: #fff; }
-      .flag-new-york { background: #1e40af; color: #fff; }
-      .flag-north-carolina { background: #dc2626; color: #fff; }
-      .flag-north-dakota { background: #1e40af; color: #fff; }
-      .flag-ohio { background: #dc2626; color: #fff; }
-      .flag-oklahoma { background: #1e40af; color: #fff; }
-      .flag-oregon { background: #1e40af; color: #fff; }
-      .flag-pennsylvania { background: #1e40af; color: #fff; }
-      .flag-rhode-island { background: #fff; color: #1f2937; }
-      .flag-south-carolina { background: #1e40af; color: #fff; }
-      .flag-south-dakota { background: #1e40af; color: #fff; }
-      .flag-tennessee { background: #dc2626; color: #fff; }
-      .flag-texas { background: #dc2626; color: #fff; }
-      .flag-utah { background: #1e40af; color: #fff; }
-      .flag-vermont { background: #16a34a; color: #fff; }
-      .flag-virginia { background: #1e40af; color: #fff; }
-      .flag-washington { background: #16a34a; color: #fff; }
-      .flag-washington-dc { background: #dc2626; color: #fff; }
-      .flag-west-virginia { background: #fff; color: #1f2937; }
-      .flag-wisconsin { background: #dc2626; color: #fff; }
-      .flag-wyoming { background: #1e40af; color: #fff; }
-
-      /* Special flag patterns for key states */
-      .flag-alabama::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, transparent 40%, #b10021 40%, #b10021 60%, transparent 60%), 
-                    linear-gradient(-45deg, transparent 40%, #b10021 40%, #b10021 60%, transparent 60%);
+      .btn-clear {
+        color: #2563eb;
+        text-decoration: underline;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-size: 0.875rem;
       }
 
-      .flag-california::after {
-        content: '★';
-        position: absolute;
-        top: 20px;
-        left: 30px;
-        color: #b71234;
-        font-size: 20px;
-      }
-
-      .flag-texas::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 30%;
-        height: 100%;
-        background: #00205b;
-      }
-
-      .flag-texas::after {
-        content: '★';
-        position: absolute;
-        top: 50%;
-        left: 15%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        font-size: 24px;
-      }
-
-      .flag-georgia::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: repeating-linear-gradient(
-          0deg,
-          #dc143c 0px,
-          #dc143c 30px,
-          #fff 30px,
-          #fff 60px
-        );
+      .btn-clear:hover {
+        color: #1d4ed8;
       }
     </style>
   </head>
@@ -688,92 +1091,109 @@
     </div>
 
     <!-- Hero Section -->
-    <header class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-title">DMV Hour Tracker</h1>
-        <h2 class="hero-subtitle">Find your official state DMV website</h2>
-        <p class="hero-description">
-          Click your state below to visit the official government site.
-        </p>
-        <div class="hero-features">
-          <div class="hero-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
-            <span>Official Government Links</span>
-          </div>
-          <div class="hero-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-            <span>Updated Weekly</span>
+    <header class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div class="text-center">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
+            DMV Hour Tracker
+          </h1>
+          <h2 class="text-lg sm:text-xl text-blue-100 mb-4 max-w-3xl mx-auto font-semibold">
+            Find your official state DMV website
+          </h2>
+          <p class="text-base sm:text-lg text-blue-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
+            Click your state below to visit the official government site.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center text-sm sm:text-base">
+            <div class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Official Government Links</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              <span>Updated Weekly</span>
+            </div>
           </div>
         </div>
       </div>
       
       <!-- Header Leaderboard Ad -->
-      <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1rem 0;">
-        <div class="ad-container">
-          <div class="ad-placeholder" style="width: 728px; height: 90px; max-width: 100%;">
-            Header Ad<br>728x90
+      <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div class="flex justify-center">
+            <div class="ad-placeholder" style="width: 728px; height: 90px; max-width: 100%;">
+              Header Ad<br>728x90
+            </div>
           </div>
         </div>
       </div>
     </header>
 
     <!-- Main Content -->
-    <main>
-      <!-- Quick DMV Services Guide -->
-      <section class="quick-guide">
-        <h2>Quick DMV Services Guide 2025</h2>
-        <div class="guide-grid">
-          <div class="guide-section">
-            <h3>Most Searched DMV Services:</h3>
-            <ul>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      
+      <!-- Quick Navigation & FAQ Section -->
+      <section class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-6 sm:p-8 mb-12 sm:mb-16 shadow-sm">
+        <h2 class="text-xl font-bold text-blue-900 mb-4">Quick DMV Services Guide 2025</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <article>
+            <h3 class="font-semibold text-blue-800 mb-2">Most Searched DMV Services:</h3>
+            <ul class="space-y-1 text-sm text-blue-700">
               <li>• <strong>Driver License Renewal Online</strong> - Available in 45+ states</li>
               <li>• <strong>Real ID Requirements</strong> - Deadline extended to May 2025</li>
               <li>• <strong>Vehicle Registration Renewal</strong> - Skip the lines with online services</li>
               <li>• <strong>DMV Appointment Scheduling</strong> - Book ahead to save time</li>
               <li>• <strong>Address Change</strong> - Update within 30 days of moving</li>
             </ul>
-          </div>
-          <div class="guide-section">
-            <h3>DMV Hours & Wait Times:</h3>
-            <ul>
+          </article>
+          <article>
+            <h3 class="font-semibold text-blue-800 mb-2">DMV Hours & Wait Times:</h3>
+            <ul class="space-y-1 text-sm text-blue-700">
               <li>• <strong>Peak Hours:</strong> Monday 8-10 AM, Friday 3-5 PM (avoid these)</li>
               <li>• <strong>Best Times:</strong> Tuesday-Thursday 10 AM-2 PM</li>
               <li>• <strong>Online Services:</strong> Available 24/7 in most states</li>
               <li>• <strong>Weekend Hours:</strong> Limited locations, check state websites</li>
             </ul>
-          </div>
+          </article>
         </div>
-        <div class="update-tracker">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-          Last updated: June 29, 2025 • Next update: July 6, 2025
-          <br>
-          ✓ All links verified weekly • ✓ Official government sources only
+        <div class="mt-4">
+          <div class="flex items-center justify-center text-sm text-gray-600">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <span>Last updated: June 29, 2025 • Next update: July 6, 2025</span>
+          </div>
+          <p class="text-xs text-blue-600 mt-2 font-medium text-center">
+            ✓ All links verified weekly • ✓ Official government sources only
+          </p>
         </div>
       </section>
 
       <!-- Section Header -->
-      <section class="section-header">
-        <h2>Find Your State's DMV Website</h2>
-        <p>Click your state below to visit the official DMV website for driver's licenses, vehicle registration, and more.</p>
+      <section class="text-center mb-8 sm:mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+          Find Your State's DMV Website
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+          Click your state below to visit the official DMV website for driver's licenses, vehicle registration, and more.
+        </p>
         
         <!-- Search Input -->
-        <div class="search-container">
-          <input 
-            type="text" 
-            id="searchInput" 
-            class="search-input" 
+        <div class="max-w-md mx-auto mb-6 px-4">
+          <input
+            type="text"
+            id="stateSearch"
             placeholder="Search your state..."
-            autocomplete="off"
-          >
+            class="search-input"
+          />
         </div>
         
-        <div class="disclaimer-box">
-          <p><strong>Important:</strong> This tool links directly to official state DMV websites to help you find license, ID, and registration info faster. Always verify information on the state site.</p>
+        <div class="max-w-3xl mx-auto bg-yellow-50 border border-yellow-200 rounded-lg p-4 mx-4 text-sm sm:text-base text-yellow-800">
+          <p class="font-medium">
+            This tool links directly to official state DMV websites to help you find license, ID, and registration info faster. Always verify information on the state site.
+          </p>
         </div>
       </section>
-      
+
       <!-- Top Rectangle Ad -->
-      <div class="ad-container">
+      <div class="mb-12 sm:mb-16 flex justify-center">
         <div class="ad-placeholder" style="width: 336px; height: 280px;">
           Top Rectangle Ad<br>336x280
         </div>
@@ -784,18 +1204,27 @@
         <!-- States will be populated by JavaScript -->
       </div>
 
-      <!-- Mid Content Banner Ad -->
-      <div class="ad-container">
+      <!-- No Results Message -->
+      <div id="noResults" class="no-results hidden">
+        <h3>No states found</h3>
+        <p>Try adjusting your search terms.</p>
+        <button class="btn-clear" onclick="clearSearch()">
+          Clear search and show all states
+        </button>
+      </div>
+
+      <!-- Mid-content Banner Ad -->
+      <div class="my-8 sm:my-12 flex justify-center px-2">
         <div class="ad-placeholder" style="width: 728px; height: 90px; max-width: 100%;">
           Mid Content Ad<br>728x90
         </div>
       </div>
 
       <!-- Comprehensive DMV Services Guide -->
-      <section class="comprehensive-guide">
-        <h2 class="guide-title">Complete DMV Services Guide 2025 - All States</h2>
+      <div class="comprehensive-guide">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Complete DMV Services Guide 2025 - All States</h2>
         
-        <!-- Featured Snippet for Google -->
+        <!-- Featured Snippets Optimization -->
         <div class="featured-snippet">
           <h3>How to Renew Your Driver's License Online (Step-by-Step)</h3>
           <ol>
@@ -809,7 +1238,7 @@
           <p class="meta">⏱️ Average completion time: 5-10 minutes | 💰 Saves $15-30 vs in-person visit</p>
         </div>
 
-        <!-- Service Cards -->
+        <!-- High-Traffic Keyword Content -->
         <div class="service-cards">
           <div class="service-card">
             <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 7.5s-8-2.5-8-7.5V6l8-3 8 3v7Z"/><path d="m9 12 2 2 4-4"/></svg>
@@ -845,7 +1274,7 @@
           </div>
         </div>
 
-        <!-- FAQ Section -->
+        <!-- FAQ Section for Featured Snippets -->
         <div class="faq-section">
           <h3>Frequently Asked DMV Questions 2025</h3>
           <div class="faq-grid">
@@ -879,23 +1308,15 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <!-- Bottom Rectangle Ad -->
-      <div class="ad-container">
+      <div class="mb-12 sm:mb-16 flex justify-center">
         <div class="ad-placeholder" style="width: 336px; height: 280px;">
           Bottom Rectangle Ad<br>336x280
         </div>
       </div>
 
-      <!-- No Results Message -->
-      <div id="noResults" class="no-results hidden">
-        <h3>No states found</h3>
-        <p>Try adjusting your search terms.</p>
-        <button onclick="clearSearch()" style="color: #2563eb; text-decoration: underline; background: none; border: none; cursor: pointer; margin-top: 1rem;">
-          Clear search and show all states
-        </button>
-      </div>
     </main>
 
     <!-- Footer -->
@@ -936,7 +1357,7 @@
     </footer>
 
     <script>
-      // State data
+      // State data - Complete list with authentic DMV URLs
       const states = [
         { id: "alabama", name: "Alabama", abbreviation: "AL", dmvUrl: "https://revenue.alabama.gov/motor-vehicle/", departmentName: "Motor Vehicle Division" },
         { id: "alaska", name: "Alaska", abbreviation: "AK", dmvUrl: "http://doa.alaska.gov/dmv/akol/", departmentName: "Division of Motor Vehicles" },
@@ -991,12 +1412,67 @@
         { id: "wyoming", name: "Wyoming", abbreviation: "WY", dmvUrl: "https://dot.state.wy.us/home/driver_license_records.html", departmentName: "Driver Services Program" }
       ];
 
-      // Sort states alphabetically
-      states.sort((a, b) => a.name.localeCompare(b.name));
+      // Sort states alphabetically by name
+      const sortedStates = [...states].sort((a, b) => a.name.localeCompare(b.name));
 
-      let currentStates = [...states];
+      let currentStates = [...sortedStates];
 
-      // Render states
+      // State colors for flag displays
+      const stateColors = {
+        'alabama': { bg: '#fff', text: '#b10021' },
+        'alaska': { bg: '#1e3a8a', text: '#fff' },
+        'arizona': { bg: '#3b82f6', text: '#fff' },
+        'arkansas': { bg: '#dc2626', text: '#fff' },
+        'california': { bg: '#fff', text: '#b71234' },
+        'colorado': { bg: '#3b82f6', text: '#fff' },
+        'connecticut': { bg: '#1e3a8a', text: '#fff' },
+        'delaware': { bg: '#1e40af', text: '#fff' },
+        'florida': { bg: '#fff', text: '#dc143c' },
+        'georgia': { bg: '#fff', text: '#dc143c' },
+        'hawaii': { bg: '#1e40af', text: '#fff' },
+        'idaho': { bg: '#1e40af', text: '#fff' },
+        'illinois': { bg: '#fff', text: '#1f2937' },
+        'indiana': { bg: '#1e40af', text: '#fff' },
+        'iowa': { bg: '#3b82f6', text: '#fff' },
+        'kansas': { bg: '#1e40af', text: '#fff' },
+        'kentucky': { bg: '#1e40af', text: '#fff' },
+        'louisiana': { bg: '#3b82f6', text: '#fff' },
+        'maine': { bg: '#1e40af', text: '#fff' },
+        'maryland': { bg: '#dc2626', text: '#fff' },
+        'massachusetts': { bg: '#fff', text: '#1f2937' },
+        'michigan': { bg: '#1e40af', text: '#fff' },
+        'minnesota': { bg: '#1e40af', text: '#fff' },
+        'mississippi': { bg: '#dc2626', text: '#fff' },
+        'missouri': { bg: '#dc2626', text: '#fff' },
+        'montana': { bg: '#1e40af', text: '#fff' },
+        'nebraska': { bg: '#1e40af', text: '#fff' },
+        'nevada': { bg: '#1e40af', text: '#fff' },
+        'new-hampshire': { bg: '#1e40af', text: '#fff' },
+        'new-jersey': { bg: '#eab308', text: '#1f2937' },
+        'new-mexico': { bg: '#dc2626', text: '#fff' },
+        'new-york': { bg: '#1e40af', text: '#fff' },
+        'north-carolina': { bg: '#dc2626', text: '#fff' },
+        'north-dakota': { bg: '#1e40af', text: '#fff' },
+        'ohio': { bg: '#dc2626', text: '#fff' },
+        'oklahoma': { bg: '#1e40af', text: '#fff' },
+        'oregon': { bg: '#1e40af', text: '#fff' },
+        'pennsylvania': { bg: '#1e40af', text: '#fff' },
+        'rhode-island': { bg: '#fff', text: '#1f2937' },
+        'south-carolina': { bg: '#1e40af', text: '#fff' },
+        'south-dakota': { bg: '#1e40af', text: '#fff' },
+        'tennessee': { bg: '#dc2626', text: '#fff' },
+        'texas': { bg: '#dc2626', text: '#fff' },
+        'utah': { bg: '#1e40af', text: '#fff' },
+        'vermont': { bg: '#16a34a', text: '#fff' },
+        'virginia': { bg: '#1e40af', text: '#fff' },
+        'washington': { bg: '#16a34a', text: '#fff' },
+        'washington-dc': { bg: '#dc2626', text: '#fff' },
+        'west-virginia': { bg: '#fff', text: '#1f2937' },
+        'wisconsin': { bg: '#dc2626', text: '#fff' },
+        'wyoming': { bg: '#1e40af', text: '#fff' }
+      };
+
+      // Function to render states grid
       function renderStates(statesToRender) {
         const grid = document.getElementById('statesGrid');
         const noResults = document.getElementById('noResults');
@@ -1010,10 +1486,12 @@
         noResults.classList.add('hidden');
         
         grid.innerHTML = statesToRender.map(state => {
+          const colors = stateColors[state.id] || { bg: '#f3f4f6', text: '#374151' };
+          
           return `
             <a href="${state.dmvUrl}" target="_blank" rel="noopener noreferrer" class="state-card">
               <div class="flag-container">
-                <div class="flag-display flag-${state.id}">
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background: ${colors.bg}; color: ${colors.text};">
                   ${state.abbreviation}
                 </div>
               </div>
@@ -1030,9 +1508,9 @@
       // Search functionality
       function filterStates(query) {
         if (!query.trim()) {
-          currentStates = [...states];
+          currentStates = [...sortedStates];
         } else {
-          currentStates = states.filter(state => 
+          currentStates = sortedStates.filter(state => 
             state.name.toLowerCase().includes(query.toLowerCase()) ||
             state.abbreviation.toLowerCase().includes(query.toLowerCase())
           );
@@ -1041,18 +1519,18 @@
       }
 
       function clearSearch() {
-        document.getElementById('searchInput').value = '';
+        document.getElementById('stateSearch').value = '';
         filterStates('');
       }
 
       // Initialize search
-      const searchInput = document.getElementById('searchInput');
+      const searchInput = document.getElementById('stateSearch');
       searchInput.addEventListener('input', (e) => {
         filterStates(e.target.value);
       });
 
       // Initial render
-      renderStates(states);
+      renderStates(sortedStates);
     </script>
   </body>
 </html>
